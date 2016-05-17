@@ -16,6 +16,10 @@ namespace Simulacion_G7.TP3
         int grLibertad_uniforme;
         double[] lista_frecuencias;
 
+        float ancho_intervalo;
+        float max_valor;
+        float min_valor;
+
         private double calculoFrecEsperadaUniforme(int intervalos, int cantidadNum)
         {
             double r = (1.0 / intervalos);
@@ -31,8 +35,8 @@ namespace Simulacion_G7.TP3
         private double[] armarListaFrecuencias(double[] lista, int cantidadNum, int intervalos)
         {
             int posicion;
-            float max_valor;
-            float min_valor;
+            
+
             for (int i = 0; i < cantidadNum; i++)
             {
                 if (i == 0)
@@ -49,11 +53,11 @@ namespace Simulacion_G7.TP3
                     min_valor = (float)lista[i];
                 }
             }
-            ancho_intervalo = (max_valor - min_valor) / cant_intervalos;
+            ancho_intervalo = (max_valor - min_valor) / intervalos;
             for (int i = 0; i < lista.Length; i++)
             {
                 posicion = (int)((lista[i] - min_valor) / ancho_intervalo);
-                if (posicion == cant_intervalos)
+                if (posicion == intervalos)
                 {
                     posicion = posicion - 1;
                 }
