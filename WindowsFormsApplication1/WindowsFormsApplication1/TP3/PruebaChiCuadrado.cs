@@ -14,7 +14,7 @@ namespace Simulacion_G7.TP3
         double frec_esp_uniforme;
         double error_rel_uniforme;
         int grLibertad_uniforme;
-        double[] lista_frecuencias;
+        int[] lista_frecuencias;
 
         float ancho_intervalo;
         float max_valor;
@@ -32,10 +32,10 @@ namespace Simulacion_G7.TP3
             grLibertad_uniforme = intervalos - 1;
             return grLibertad_uniforme;
         }
-        private double[] armarListaFrecuencias(double[] lista, int cantidadNum, int intervalos)
+        private int[] armarListaFrecuencias(double[] lista, int cantidadNum, int intervalos)
         {
             int posicion;
-            
+            lista_frecuencias = new int[intervalos];
 
             for (int i = 0; i < cantidadNum; i++)
             {
@@ -68,7 +68,7 @@ namespace Simulacion_G7.TP3
         }
 
 
-        private double calcularErrorRelativoUniforme(double[] lista_frecuencias)
+        private double calcularErrorRelativoUniforme(int[] lista_frecuencias)
         {
             double aux1 = 0.0;
             double aux2 = 0.0;
