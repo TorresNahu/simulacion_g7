@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApplication1.Properties
+namespace Simulacion_G7.Properties
 {
 
 

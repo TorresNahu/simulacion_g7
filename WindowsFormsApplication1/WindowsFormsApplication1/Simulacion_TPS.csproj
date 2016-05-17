@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,12 +56,44 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TP3\GenerarDistribuciones.cs" />
+    <Compile Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionExponencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionExponencial.designer.cs">
+      <DependentUpon>DistribucionExponencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionNormal.designer.cs">
+      <DependentUpon>DistribucionNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionPoisson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionPoisson.designer.cs">
+      <DependentUpon>DistribucionPoisson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionUniforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionUniforme.designer.cs">
+      <DependentUpon>DistribucionUniforme.cs</DependentUpon>
+    </Compile>
     <Compile Include="TP3\Generar_Distribuciones\Generar_distribuciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TP3\Generar_Distribuciones\Generar_distribuciones.Designer.cs">
       <DependentUpon>Generar_distribuciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="TP3\PruebaChiCuadrado.cs" />
+    <Compile Include="TP4_Montecarlo\EjerTortas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP4_Montecarlo\EjerTortas.designer.cs">
+      <DependentUpon>EjerTortas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TP4_Montecarlo\Montecarlo.cs" />
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -73,8 +106,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionExponencial.resx">
+      <DependentUpon>DistribucionExponencial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionNormal.resx">
+      <DependentUpon>DistribucionNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionPoisson.resx">
+      <DependentUpon>DistribucionPoisson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionUniforme.resx">
+      <DependentUpon>DistribucionUniforme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TP3\Generar_Distribuciones\Generar_distribuciones.resx">
       <DependentUpon>Generar_distribuciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP4_Montecarlo\EjerTortas.resx">
+      <DependentUpon>EjerTortas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -86,13 +134,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TP3\Generar_Distribuciones\Distribuciones\" />
-    <Folder Include="TP4\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

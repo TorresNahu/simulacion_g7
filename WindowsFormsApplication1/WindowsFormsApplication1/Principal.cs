@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Simulacion_G7.TP3.Generar_Distribuciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApplication1
+namespace Simulacion_G7
 {
     public partial class Principal : Form
     {
@@ -16,6 +17,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+
         private void btn_tp3_Click(object sender, EventArgs e)
         {
             Generar_distribuciones form = new Generar_distribuciones();

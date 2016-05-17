@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1.TP3.Generar_Distribuciones
+﻿namespace Simulacion_G7.TP3.Generar_Distribuciones
 {
     partial class Generar_distribuciones
     {

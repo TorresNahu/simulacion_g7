@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace Simulacion_G7
 {
     partial class Principal
     {

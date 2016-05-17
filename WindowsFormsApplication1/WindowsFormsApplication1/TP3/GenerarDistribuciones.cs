@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApplication1.TP3
+namespace Simulacion_G7.TP3
 {
     class GenerarDistribuciones
     {
