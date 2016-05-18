@@ -21,6 +21,8 @@ namespace Simulacion_G7
 
         int cant_intervalos;
 
+        
+
         public DistribucionUniforme()
         {
             InitializeComponent();
@@ -69,12 +71,12 @@ namespace Simulacion_G7
 
         private void btn_generar_numeros_Click(object sender, EventArgs e)
         {
-            if (validar()==true)
+            if (validar() == true)
             {
                 GenerarDistribuciones actual = new GenerarDistribuciones();
 
                 lista = actual.generar_distibucion_uniforme(lim_inf, lim_sup, cantidad_de_numeros);
-                
+
                 for (int i = 0; i < lista.Length; i++)
                 {
                     dgv_numeros.Rows.Add(i + 1, lista[i]);
@@ -82,7 +84,7 @@ namespace Simulacion_G7
 
                 graficar_distribucion();
 
-                btn_intentar_de_nuevo.Visible = true;
+                btn_intentar_de_nuevo.Enabled = true;
                 txt_cant_a_generar.Enabled = false;
                 txt_cant_intervalos.Enabled = false;
                 txt_lim_inferior.Enabled = false;
@@ -94,7 +96,7 @@ namespace Simulacion_G7
         {
             //titulo del grafico
             grafico_dist_uniforme.Titles.Clear();
-            grafico_dist_uniforme.Titles.Add("Distribución uniforme entre "+ lim_inf+" y "+lim_sup+":");
+            grafico_dist_uniforme.Titles.Add("Distribución uniforme entre " + lim_inf + " y " + lim_sup + ":");
             //definicion de los intervalos
             cant_intervalos = int.Parse(txt_cant_intervalos.Text);
             float ancho_intervalo = (lim_sup - lim_inf) / (float)cant_intervalos;
@@ -142,7 +144,7 @@ namespace Simulacion_G7
             }
         }
 
-        
+
         private void DistribucionUniforme_Load(object sender, EventArgs e)
         {
             dgv_numeros.Columns.Add("orden", "Orden");
@@ -158,7 +160,7 @@ namespace Simulacion_G7
             grafico_dist_uniforme.Series.Clear();
             grafico_dist_uniforme.Titles.Clear();
 
-            btn_intentar_de_nuevo.Visible = false;
+            btn_intentar_de_nuevo.Enabled = false;
             txt_cant_a_generar.Enabled = true;
             txt_cant_intervalos.Enabled = true;
             txt_lim_inferior.Enabled = true;
@@ -247,7 +249,7 @@ namespace Simulacion_G7
         {
             Generar_distribuciones dis = new Generar_distribuciones();
             dis.Show();
-            
+
         }
 
         private void btn_pruebaChi_Click(object sender, EventArgs e)
@@ -258,8 +260,8 @@ namespace Simulacion_G7
             MessageBox.Show(hipotesis, "Prueba de Chi-Cuadrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
-        
-        
+
+
 
     }
 }

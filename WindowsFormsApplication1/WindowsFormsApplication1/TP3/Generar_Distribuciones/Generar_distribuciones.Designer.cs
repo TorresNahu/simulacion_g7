@@ -107,6 +107,7 @@
             this.Controls.Add(this.btn_dist_exponencial);
             this.Controls.Add(this.btn_dist_uniforme);
             this.Name = "Generar_distribuciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generar_distribuciones";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Generar_distribuciones_FormClosing);
             this.ResumeLayout(false);

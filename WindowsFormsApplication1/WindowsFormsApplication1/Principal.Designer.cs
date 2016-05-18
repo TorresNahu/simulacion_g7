@@ -41,6 +41,7 @@
             this.btn_tp4.TabIndex = 5;
             this.btn_tp4.Text = "Trabajo Práctico N°4";
             this.btn_tp4.UseVisualStyleBackColor = true;
+            this.btn_tp4.Click += new System.EventHandler(this.btn_tp4_Click_1);
             // 
             // btn_Salir
             // 
@@ -60,6 +61,7 @@
             this.btn_tp3.TabIndex = 4;
             this.btn_tp3.Text = "Trabajo Práctico N°3";
             this.btn_tp3.UseVisualStyleBackColor = true;
+            this.btn_tp3.Click += new System.EventHandler(this.btn_tp3_Click_1);
             // 
             // Principal
             // 

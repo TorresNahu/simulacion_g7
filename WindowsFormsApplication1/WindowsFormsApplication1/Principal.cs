@@ -17,20 +17,7 @@ namespace Simulacion_G7
         {
             InitializeComponent();
         }
-
-        private void btn_tp3_Click(object sender, EventArgs e)
-        {
-            Generar_distribuciones form = new Generar_distribuciones();
-            form.Show();
-            this.Hide();
-        }
-        private void btn_tp4_Click(object sender, EventArgs e)
-        {
-            TP4_Montecarlo.EjerTortas form = new TP4_Montecarlo.EjerTortas();
-            form.Show();
-            this.Hide();
-        }
-
+        
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.ExitThread();
@@ -39,6 +26,20 @@ namespace Simulacion_G7
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             Application.ExitThread();
+        }
+
+        private void btn_tp3_Click_1(object sender, EventArgs e)
+        {
+            Generar_distribuciones form = new Generar_distribuciones();
+            form.Show();
+            this.Hide();
+        }
+
+        private void btn_tp4_Click_1(object sender, EventArgs e)
+        {
+            TP4_Montecarlo.EjerTortas form = new TP4_Montecarlo.EjerTortas();
+            form.Show();
+            this.Hide();
         }
     }
 }
