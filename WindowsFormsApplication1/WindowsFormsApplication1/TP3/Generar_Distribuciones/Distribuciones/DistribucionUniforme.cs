@@ -171,6 +171,7 @@ namespace Simulacion_G7
             txt_cant_intervalos.Text = String.Empty;
             txt_lim_inferior.Text = String.Empty;
             txt_lim_superior.Text = String.Empty;
+            txt_lim_inferior.Focus();
         }
 
         private void txt_lim_inferior_KeyPress(object sender, KeyPressEventArgs e)

@@ -35,6 +35,7 @@ namespace Simulacion_G7.TP4_Montecarlo
         {
             txt_cantExperimentos.Focus();
             btn_resultados.Enabled = false;
+            btn_tryAgain.Enabled = false;
         }
 
         private void btn_empezarSim_Click(object sender, EventArgs e)
@@ -45,10 +46,10 @@ namespace Simulacion_G7.TP4_Montecarlo
 
                 btn_resultados.Enabled = true;
                 btn_empezarSim.Enabled = false;
+                btn_tryAgain.Enabled = true;
                 txt_iteracionDesde.Enabled = false;
                 txt_iteracionHasta.Enabled = false;
                 txt_cantExperimentos.Enabled = false;
-
             }
         }
 
@@ -178,6 +179,7 @@ namespace Simulacion_G7.TP4_Montecarlo
 
             btn_resultados.Enabled = false;
             btn_empezarSim.Enabled = true;
+            btn_tryAgain.Enabled = false;
             desde = 0;
             hasta = 0;
             sumUtilidadDia = 0;

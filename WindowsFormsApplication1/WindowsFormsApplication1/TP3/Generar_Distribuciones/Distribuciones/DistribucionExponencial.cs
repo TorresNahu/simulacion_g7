@@ -182,6 +182,7 @@ namespace Simulacion_G7
             txt_cant_a_generar.Text = String.Empty;
             txt_cant_intervalos.Text = String.Empty;
             txt_lambda.Text = String.Empty;
+            txt_lambda.Focus();
 
         }
 
