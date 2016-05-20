@@ -18,6 +18,7 @@ namespace Simulacion_G7.TP4_Montecarlo
         int sumUtilidadDia = 0;
         int sumTortasNoSurtidas = 0;
         int sumTortasTiradas = 0;
+        int sumatoria_multas = 0;
 
         public EjerTortas()
         {
@@ -101,6 +102,7 @@ namespace Simulacion_G7.TP4_Montecarlo
                     multa = 300;
                     utilidadDia = (cantComprada * utilidadPorTorta) - multa;
                     sumUtilidadDia += utilidadDia;
+                    sumatoria_multas ++;
                 }
                 else
                 {
@@ -111,7 +113,7 @@ namespace Simulacion_G7.TP4_Montecarlo
 
                 if (i >= (desde - 1) && i <= (hasta - 1)) // iteraciones a mostrar en grilla
                 {
-                    dgv_vectorEstado.Rows.Add((i + 1), randomDem, cantDemandada, randomMulta, deterMulta, utilidadDia, sumUtilidadDia, tortasNoSurtidas, sumTortasNoSurtidas, tortasTiradas, sumTortasTiradas);
+                    dgv_vectorEstado.Rows.Add((i + 1), randomDem, cantDemandada, randomMulta, deterMulta, utilidadDia, sumUtilidadDia, tortasNoSurtidas, sumTortasNoSurtidas, tortasTiradas, sumTortasTiradas,sumatoria_multas);
 
                 }
 
@@ -185,6 +187,8 @@ namespace Simulacion_G7.TP4_Montecarlo
             sumUtilidadDia = 0;
             sumTortasNoSurtidas = 0;
             sumTortasTiradas = 0;
+            txt_cantExperimentos.Focus();
+            sumatoria_multas = 0;
         }
 
         private void btn_resultados_Click(object sender, EventArgs e)
@@ -197,7 +201,7 @@ namespace Simulacion_G7.TP4_Montecarlo
             Montecarlo doncarlo = new Montecarlo();
             string resultado;
 
-            resultado = doncarlo.resultadosSim(cantExp, sumUtilidadDia, sumTortasNoSurtidas, sumTortasTiradas);
+            resultado = doncarlo.resultadosSim(cantExp, sumUtilidadDia, sumTortasNoSurtidas, sumTortasTiradas,sumatoria_multas);
 
             MessageBox.Show(resultado, "Resultados de la Simulacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

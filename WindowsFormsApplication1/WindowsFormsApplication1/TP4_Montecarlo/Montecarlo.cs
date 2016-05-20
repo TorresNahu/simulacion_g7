@@ -13,6 +13,7 @@ namespace Simulacion_G7.TP4_Montecarlo
         double promedioNoSurtido;
         double promedioTirado;
         double promedioUtilidad;
+        string resultado = "No conviene";
 
         private Random rnd = new Random();
 
@@ -80,15 +81,32 @@ namespace Simulacion_G7.TP4_Montecarlo
             return promedioUtilidad;
         }
 
-        public String resultadosSim(int cantidadExperimentos, int sumatoriaUtilidadDia, int sumatoriaTortasNoSurtidas, int sumatoriaTortasTiradas)
+        public String conviene_comprar_permiso(int cant_experimentos, int sumatoria_multas)
+        {
+            int cant_semanas = (int)(cant_experimentos / 7);
+            double monto_multas = sumatoria_multas * 300;
+            double importe_permisos = cant_semanas * 200;
+            
+
+            if (monto_multas > importe_permisos)
+            {
+                resultado = "Si conviene";
+            }
+
+            return resultado;
+        }
+
+        public String resultadosSim(int cantidadExperimentos, int sumatoriaUtilidadDia, int sumatoriaTortasNoSurtidas, int sumatoriaTortasTiradas, int sumatoria_multas)
         {
             calculoPromedioNoSurtido(cantidadExperimentos, sumatoriaTortasNoSurtidas);
             calculoPromedioTirado(cantidadExperimentos, sumatoriaTortasTiradas);
             calculoPromedioUtilidad(cantidadExperimentos, sumatoriaUtilidadDia);
+            conviene_comprar_permiso(cantidadExperimentos, sumatoria_multas);
 
             string str = "Promedio de tortas no surtidas: " + promedioNoSurtido
                 + "\nPromedio de tortas tiradas: " + promedioTirado
-                + "\nPromedio de utilidad por dia: " + promedioUtilidad;
+                + "\nPromedio de utilidad por dia: " + promedioUtilidad
+                + "\n¿Conviene pagar permiso?: " + resultado ;
 
             return str;
         }

@@ -37,6 +37,9 @@
             this.gbx_vectorEstado = new System.Windows.Forms.GroupBox();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.dgv_vectorEstado = new System.Windows.Forms.DataGridView();
+            this.btn_empezarSim = new System.Windows.Forms.Button();
+            this.btn_tryAgain = new System.Windows.Forms.Button();
+            this.btn_resultados = new System.Windows.Forms.Button();
             this.exp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rnd_demanda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.demanda = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +51,7 @@
             this.sum_noSurtido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tortasATirar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sum_tortasATirar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_empezarSim = new System.Windows.Forms.Button();
-            this.btn_tryAgain = new System.Windows.Forms.Button();
-            this.btn_resultados = new System.Windows.Forms.Button();
+            this.multas_acum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbx_vectorEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vectorEstado)).BeginInit();
             this.SuspendLayout();
@@ -120,7 +121,7 @@
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(969, 425);
+            this.btn_Salir.Location = new System.Drawing.Point(1035, 424);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 23);
             this.btn_Salir.TabIndex = 9;
@@ -142,11 +143,42 @@
             this.noSurtido,
             this.sum_noSurtido,
             this.tortasATirar,
-            this.sum_tortasATirar});
+            this.sum_tortasATirar,
+            this.multas_acum});
             this.dgv_vectorEstado.Location = new System.Drawing.Point(15, 113);
             this.dgv_vectorEstado.Name = "dgv_vectorEstado";
-            this.dgv_vectorEstado.Size = new System.Drawing.Size(1029, 306);
+            this.dgv_vectorEstado.Size = new System.Drawing.Size(1095, 306);
             this.dgv_vectorEstado.TabIndex = 8;
+            // 
+            // btn_empezarSim
+            // 
+            this.btn_empezarSim.Location = new System.Drawing.Point(483, 45);
+            this.btn_empezarSim.Name = "btn_empezarSim";
+            this.btn_empezarSim.Size = new System.Drawing.Size(130, 28);
+            this.btn_empezarSim.TabIndex = 5;
+            this.btn_empezarSim.Text = "Empezar Simulacion";
+            this.btn_empezarSim.UseVisualStyleBackColor = true;
+            this.btn_empezarSim.Click += new System.EventHandler(this.btn_empezarSim_Click);
+            // 
+            // btn_tryAgain
+            // 
+            this.btn_tryAgain.Location = new System.Drawing.Point(636, 45);
+            this.btn_tryAgain.Name = "btn_tryAgain";
+            this.btn_tryAgain.Size = new System.Drawing.Size(130, 28);
+            this.btn_tryAgain.TabIndex = 6;
+            this.btn_tryAgain.Text = "Probar otra simulacion";
+            this.btn_tryAgain.UseVisualStyleBackColor = true;
+            this.btn_tryAgain.Click += new System.EventHandler(this.btn_tryAgain_Click);
+            // 
+            // btn_resultados
+            // 
+            this.btn_resultados.Location = new System.Drawing.Point(786, 45);
+            this.btn_resultados.Name = "btn_resultados";
+            this.btn_resultados.Size = new System.Drawing.Size(130, 28);
+            this.btn_resultados.TabIndex = 7;
+            this.btn_resultados.Text = "Ver Resultados";
+            this.btn_resultados.UseVisualStyleBackColor = true;
+            this.btn_resultados.Click += new System.EventHandler(this.btn_resultados_Click);
             // 
             // exp
             // 
@@ -207,49 +239,25 @@
             this.sum_tortasATirar.HeaderText = "Σ Tortas A Tirar";
             this.sum_tortasATirar.Name = "sum_tortasATirar";
             // 
-            // btn_empezarSim
+            // multas_acum
             // 
-            this.btn_empezarSim.Location = new System.Drawing.Point(483, 45);
-            this.btn_empezarSim.Name = "btn_empezarSim";
-            this.btn_empezarSim.Size = new System.Drawing.Size(130, 28);
-            this.btn_empezarSim.TabIndex = 5;
-            this.btn_empezarSim.Text = "Empezar Simulacion";
-            this.btn_empezarSim.UseVisualStyleBackColor = true;
-            this.btn_empezarSim.Click += new System.EventHandler(this.btn_empezarSim_Click);
-            // 
-            // btn_tryAgain
-            // 
-            this.btn_tryAgain.Location = new System.Drawing.Point(636, 45);
-            this.btn_tryAgain.Name = "btn_tryAgain";
-            this.btn_tryAgain.Size = new System.Drawing.Size(130, 28);
-            this.btn_tryAgain.TabIndex = 6;
-            this.btn_tryAgain.Text = "Probar otra simulacion";
-            this.btn_tryAgain.UseVisualStyleBackColor = true;
-            this.btn_tryAgain.Click += new System.EventHandler(this.btn_tryAgain_Click);
-            // 
-            // btn_resultados
-            // 
-            this.btn_resultados.Location = new System.Drawing.Point(786, 45);
-            this.btn_resultados.Name = "btn_resultados";
-            this.btn_resultados.Size = new System.Drawing.Size(130, 28);
-            this.btn_resultados.TabIndex = 7;
-            this.btn_resultados.Text = "Ver Resultados";
-            this.btn_resultados.UseVisualStyleBackColor = true;
-            this.btn_resultados.Click += new System.EventHandler(this.btn_resultados_Click);
+            this.multas_acum.HeaderText = "Σ Multas";
+            this.multas_acum.Name = "multas_acum";
+            this.multas_acum.Width = 60;
             // 
             // EjerTortas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 460);
+            this.ClientSize = new System.Drawing.Size(1122, 459);
             this.Controls.Add(this.btn_resultados);
             this.Controls.Add(this.btn_tryAgain);
             this.Controls.Add(this.btn_empezarSim);
             this.Controls.Add(this.dgv_vectorEstado);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.gbx_vectorEstado);
-            this.MaximumSize = new System.Drawing.Size(1072, 498);
-            this.MinimumSize = new System.Drawing.Size(1072, 498);
+            this.MaximumSize = new System.Drawing.Size(1138, 498);
+            this.MinimumSize = new System.Drawing.Size(1138, 498);
             this.Name = "EjerTortas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio 15: Tortas";
@@ -287,5 +295,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sum_noSurtido;
         private System.Windows.Forms.DataGridViewTextBoxColumn tortasATirar;
         private System.Windows.Forms.DataGridViewTextBoxColumn sum_tortasATirar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn multas_acum;
     }
 }
