@@ -31,6 +31,7 @@
             this.btn_tp4 = new System.Windows.Forms.Button();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_tp3 = new System.Windows.Forms.Button();
+            this.btn_tp5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_tp4
@@ -63,11 +64,22 @@
             this.btn_tp3.UseVisualStyleBackColor = true;
             this.btn_tp3.Click += new System.EventHandler(this.btn_tp3_Click_1);
             // 
+            // btn_tp5
+            // 
+            this.btn_tp5.Location = new System.Drawing.Point(45, 86);
+            this.btn_tp5.Name = "btn_tp5";
+            this.btn_tp5.Size = new System.Drawing.Size(219, 23);
+            this.btn_tp5.TabIndex = 5;
+            this.btn_tp5.Text = "Trabajo Práctico N°5";
+            this.btn_tp5.UseVisualStyleBackColor = true;
+            this.btn_tp5.Click += new System.EventHandler(this.btn_tp5_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 254);
+            this.ClientSize = new System.Drawing.Size(309, 253);
+            this.Controls.Add(this.btn_tp5);
             this.Controls.Add(this.btn_tp4);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.btn_tp3);
@@ -86,6 +98,7 @@
         private System.Windows.Forms.Button btn_tp3;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_tp4;
+        private System.Windows.Forms.Button btn_tp5;
     }
 }
 
