@@ -275,14 +275,13 @@ namespace Simulacion_G7.TP3
         */
 
         //Para Normal (buuuhhhuuu)
-        double[] frec_esp_normal;
+        int[] frec_esp_normal;
         double error_rel_normal;
         int grLibertad_normal;
 
-        private double[] calculoFrecEsperadaNormal(int intervalos, int cantidadNum, float lambda, float min_valor, float ancho_int)
+        private int[] calculoFrecEsperadaNormal(int intervalos, int cantidadNum, float lambda, float min_valor, float ancho_int)
         {
-
-            frec_esp_normal = new double[intervalos];
+            frec_esp_normal = new int[intervalos];
             //Hay que calcular la probabilidad esperada.
             float prob_esperada;
             float int_de_clase;
@@ -360,6 +359,6 @@ namespace Simulacion_G7.TP3
 
             return str;
         }
-
+        
     }
 }
