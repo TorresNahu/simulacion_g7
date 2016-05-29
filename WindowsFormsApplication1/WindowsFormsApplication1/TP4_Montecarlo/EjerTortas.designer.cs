@@ -121,7 +121,7 @@
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(1035, 424);
+            this.btn_Salir.Location = new System.Drawing.Point(1030, 426);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 23);
             this.btn_Salir.TabIndex = 9;
@@ -249,15 +249,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 459);
+            this.ClientSize = new System.Drawing.Size(1117, 461);
             this.Controls.Add(this.btn_resultados);
             this.Controls.Add(this.btn_tryAgain);
             this.Controls.Add(this.btn_empezarSim);
             this.Controls.Add(this.dgv_vectorEstado);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.gbx_vectorEstado);
-            this.MaximumSize = new System.Drawing.Size(1138, 498);
-            this.MinimumSize = new System.Drawing.Size(1138, 498);
             this.Name = "EjerTortas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ejercicio 15: Tortas";

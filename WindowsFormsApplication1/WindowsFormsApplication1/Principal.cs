@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1.TP5_Colas;
 
 namespace Simulacion_G7
 {
@@ -38,6 +37,13 @@ namespace Simulacion_G7
         private void btn_tp4_Click_1(object sender, EventArgs e)
         {
             TP4_Montecarlo.EjerTortas form = new TP4_Montecarlo.EjerTortas();
+            form.Show();
+            this.Hide();
+        }
+
+        private void btn_tp5_Click(object sender, EventArgs e)
+        {
+            Estacionamiento form = new Estacionamiento();
             form.Show();
             this.Hide();
         }

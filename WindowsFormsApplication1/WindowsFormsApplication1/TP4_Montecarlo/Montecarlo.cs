@@ -106,7 +106,7 @@ namespace Simulacion_G7.TP4_Montecarlo
             string str = "Promedio de tortas no surtidas: " + promedioNoSurtido
                 + "\nPromedio de tortas tiradas: " + promedioTirado
                 + "\nPromedio de utilidad por dia: " + promedioUtilidad
-                + "\n¿Conviene pagar permiso?: " + resultado ;
+                + "\n¿Conviene pagar permiso? " + resultado ;
 
             return str;
         }
