@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Simulacion_G7;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,10 @@ namespace WindowsFormsApplication1.TP5_Colas
 
         private void Estacionamiento_Load(object sender, EventArgs e)
         {
+            /*
             dgv_sim.Columns.Add("reloj", "Reloj");
-            dgv_sim.Columns.Add("rdn_", "RND Llegada vehiculo");
+            dgv_sim.Columns.Add("rdn_llegada", "RND Llegada vehiculo");
+            dgv_sim.Columns.Add("tiempo_sig_llegada", "Tiempo Siguiente Llegada");
             dgv_sim.Columns.Add("prox_llegada", "Próxima llegada");
             dgv_sim.Columns.Add("rdn_fin_estac", "RND Fin estacionamiento");
             dgv_sim.Columns.Add("tiempo_uso_est", "Tiempo uso estacionamiento");
@@ -42,6 +45,7 @@ namespace WindowsFormsApplication1.TP5_Colas
             dgv_sim.Columns.Add("acum_autos_sin_estacionar", "Acum autos sin estacionar");
             dgv_sim.Columns.Add("vehiculo_estado", "Estado vehiculo");
             dgv_sim.Columns.Add("hora_inicio_espera", "Hora Inicio Espera");
+            */
         }
 
         private void btn_empezarSim_Click(object sender, EventArgs e)
@@ -57,6 +61,11 @@ namespace WindowsFormsApplication1.TP5_Colas
                 txt_iteracionHasta.Enabled = false;
                 txt_cantExperimentos.Enabled = false;
             }
+        }
+
+        private void realizarSimulacion()
+        {
+
         }
 
         private bool validar()
@@ -88,11 +97,24 @@ namespace WindowsFormsApplication1.TP5_Colas
             }
             return true;
         }
-
-        private void realizarSimulacion()
+        
+        private void btn_Salir_Click(object sender, EventArgs e)
         {
-
+            Principal main = new Principal();
+            main.Show();
+            Close();
         }
 
+        private void Estacionamiento_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Principal main = new Principal();
+            main.Show();
+        }
+
+        private void btn_Info_Click(object sender, EventArgs e)
+        {
+            InfoAboutProblem iap = new InfoAboutProblem();
+            iap.Show();
+        }
     }
 }

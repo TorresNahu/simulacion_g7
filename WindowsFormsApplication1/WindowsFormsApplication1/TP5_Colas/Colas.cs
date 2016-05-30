@@ -22,5 +22,7 @@ namespace WindowsFormsApplication1.TP5_Colas
             }
             return demora;
         }
+        
+
     }
 }
