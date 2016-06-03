@@ -3,12 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Simulacion_G7.TP3;
 
 namespace WindowsFormsApplication1.TP5_Colas
 {
     class Colas
     {
         bool demora;
+        int cantGenerar = 2;
+
+        double min;
+
+        public double generarRNDNormal(float media, float desv)
+        {
+            double[] rndLista;
+            double rnd;
+
+            GenerarDistribuciones dis = new GenerarDistribuciones();
+
+            rndLista = dis.generar_distribucion_normal(media, desv, cantGenerar);
+            rnd = rndLista[0];
+
+            return rnd;
+        }
 
         public bool determinarDemora(double rndDemora)
         {
@@ -22,7 +39,25 @@ namespace WindowsFormsApplication1.TP5_Colas
             }
             return demora;
         }
-        
+
+        public double determinarMenor(double proxLlegada, double fin_est1, double fin_est2, double fin_est3, double fin_est4, double fin_est5, double proxInspeccion, double fin_inspeccion)
+        {
+            
+            double[] lis = new double[] { proxLlegada, fin_est1, fin_est2, fin_est3, fin_est4, fin_est5, proxInspeccion, fin_inspeccion };
+            for (int i = 0; i < lis.Length; i++)
+            {
+                if (i == 0)
+                {
+                    min = lis[i];
+                }
+                if (lis[i] < min && lis[i]!=0)
+                {
+                    min = lis[i];
+                }
+            }
+
+            return min;
+        }
 
     }
 }

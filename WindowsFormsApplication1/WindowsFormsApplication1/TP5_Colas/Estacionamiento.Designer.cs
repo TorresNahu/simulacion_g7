@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,8 +47,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_sim = new System.Windows.Forms.DataGridView();
             this.btn_resultados = new System.Windows.Forms.Button();
             this.btn_tryAgain = new System.Windows.Forms.Button();
@@ -61,28 +60,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.btn_Info = new System.Windows.Forms.Button();
-            this.reloj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rdn_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiempo_sig_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prox_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rnd_fin_estac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiempo_uso_estac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rnd_demora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin_estacionamiento_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin_estacionamiento_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin_estacionamiento_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin_estacionamiento_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin_estacionamiento_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_lugar_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_lugar_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_lugar_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_lugar_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_lugar_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado_inspector = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prox_inspeccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin_inspeccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acum_multas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acum_autos_sin_estacionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._interacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._relojCola = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._tiempo_sig_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._prox_llegada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._rnd_demora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._demora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._fin_estacionamiento_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._fin_estacionamiento_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._fin_estacionamiento_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._fin_estacionamiento_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._fin_estacionamiento_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._estado_inspector = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._prox_inspeccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._fin_inspeccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._estado_lugar_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._estado_lugar_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._estado_lugar_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._estado_lugar_4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._estado_lugar_5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._acum_multas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._acum_autos_sin_estacionar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sim)).BeginInit();
             this.gbx_vectorEstado.SuspendLayout();
             this.SuspendLayout();
@@ -91,54 +89,57 @@
             // 
             this.dgv_sim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_sim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.reloj,
-            this.rdn_llegada,
-            this.tiempo_sig_llegada,
-            this.prox_llegada,
-            this.rnd_fin_estac,
-            this.tiempo_uso_estac,
-            this.rnd_demora,
-            this.fin_estacionamiento_1,
-            this.fin_estacionamiento_2,
-            this.fin_estacionamiento_3,
-            this.fin_estacionamiento_4,
-            this.fin_estacionamiento_5,
-            this.estado_lugar_1,
-            this.estado_lugar_2,
-            this.estado_lugar_3,
-            this.estado_lugar_4,
-            this.estado_lugar_5,
-            this.estado_inspector,
-            this.prox_inspeccion,
-            this.fin_inspeccion,
-            this.acum_multas,
-            this.acum_autos_sin_estacionar});
+            this._interacion,
+            this._relojCola,
+            this._tiempo_sig_llegada,
+            this._prox_llegada,
+            this._rnd_demora,
+            this._demora,
+            this._fin_estacionamiento_1,
+            this._fin_estacionamiento_2,
+            this._fin_estacionamiento_3,
+            this._fin_estacionamiento_4,
+            this._fin_estacionamiento_5,
+            this._estado_inspector,
+            this._prox_inspeccion,
+            this._fin_inspeccion,
+            this._estado_lugar_1,
+            this._estado_lugar_2,
+            this._estado_lugar_3,
+            this._estado_lugar_4,
+            this._estado_lugar_5,
+            this._acum_multas,
+            this._acum_autos_sin_estacionar});
             this.dgv_sim.Location = new System.Drawing.Point(12, 143);
             this.dgv_sim.Name = "dgv_sim";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_sim.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_sim.Size = new System.Drawing.Size(910, 273);
             this.dgv_sim.TabIndex = 0;
             // 
             // btn_resultados
             // 
-            this.btn_resultados.Location = new System.Drawing.Point(629, 57);
+            this.btn_resultados.Location = new System.Drawing.Point(626, 71);
             this.btn_resultados.Name = "btn_resultados";
             this.btn_resultados.Size = new System.Drawing.Size(141, 28);
             this.btn_resultados.TabIndex = 11;
             this.btn_resultados.Text = "Ver Resultados";
             this.btn_resultados.UseVisualStyleBackColor = true;
+            this.btn_resultados.Click += new System.EventHandler(this.btn_resultados_Click);
             // 
             // btn_tryAgain
             // 
-            this.btn_tryAgain.Location = new System.Drawing.Point(477, 57);
+            this.btn_tryAgain.Location = new System.Drawing.Point(474, 71);
             this.btn_tryAgain.Name = "btn_tryAgain";
             this.btn_tryAgain.Size = new System.Drawing.Size(130, 28);
             this.btn_tryAgain.TabIndex = 10;
             this.btn_tryAgain.Text = "Probar otra simulacion";
             this.btn_tryAgain.UseVisualStyleBackColor = true;
+            this.btn_tryAgain.Click += new System.EventHandler(this.btn_tryAgain_Click);
             // 
             // btn_empezarSim
             // 
-            this.btn_empezarSim.Location = new System.Drawing.Point(477, 12);
+            this.btn_empezarSim.Location = new System.Drawing.Point(474, 23);
             this.btn_empezarSim.Name = "btn_empezarSim";
             this.btn_empezarSim.Size = new System.Drawing.Size(130, 28);
             this.btn_empezarSim.TabIndex = 9;
@@ -156,7 +157,7 @@
             this.gbx_vectorEstado.Controls.Add(this.label1);
             this.gbx_vectorEstado.Location = new System.Drawing.Point(12, 12);
             this.gbx_vectorEstado.Name = "gbx_vectorEstado";
-            this.gbx_vectorEstado.Size = new System.Drawing.Size(443, 85);
+            this.gbx_vectorEstado.Size = new System.Drawing.Size(443, 87);
             this.gbx_vectorEstado.TabIndex = 8;
             this.gbx_vectorEstado.TabStop = false;
             this.gbx_vectorEstado.Text = "Vector de Estado";
@@ -221,7 +222,7 @@
             // 
             // btn_Info
             // 
-            this.btn_Info.Location = new System.Drawing.Point(629, 12);
+            this.btn_Info.Location = new System.Drawing.Point(626, 23);
             this.btn_Info.Name = "btn_Info";
             this.btn_Info.Size = new System.Drawing.Size(141, 28);
             this.btn_Info.TabIndex = 13;
@@ -229,160 +230,160 @@
             this.btn_Info.UseVisualStyleBackColor = true;
             this.btn_Info.Click += new System.EventHandler(this.btn_Info_Click);
             // 
-            // reloj
+            // _interacion
+            // 
+            this._interacion.HeaderText = "Iteracion N°";
+            this._interacion.Name = "_interacion";
+            this._interacion.Width = 50;
+            // 
+            // _relojCola
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.reloj.DefaultCellStyle = dataGridViewCellStyle1;
-            this.reloj.HeaderText = "Reloj";
-            this.reloj.Name = "reloj";
+            this._relojCola.DefaultCellStyle = dataGridViewCellStyle1;
+            this._relojCola.HeaderText = "Reloj";
+            this._relojCola.Name = "_relojCola";
+            this._relojCola.Width = 75;
             // 
-            // rdn_llegada
+            // _tiempo_sig_llegada
             // 
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.rdn_llegada.DefaultCellStyle = dataGridViewCellStyle2;
-            this.rdn_llegada.HeaderText = "RND Llegada Vehiculo";
-            this.rdn_llegada.Name = "rdn_llegada";
+            this._tiempo_sig_llegada.DefaultCellStyle = dataGridViewCellStyle2;
+            this._tiempo_sig_llegada.HeaderText = "Tiempo Siguiente Llegada";
+            this._tiempo_sig_llegada.Name = "_tiempo_sig_llegada";
             // 
-            // tiempo_sig_llegada
+            // _prox_llegada
             // 
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tiempo_sig_llegada.DefaultCellStyle = dataGridViewCellStyle3;
-            this.tiempo_sig_llegada.HeaderText = "Tiempo Siguiente Llegada";
-            this.tiempo_sig_llegada.Name = "tiempo_sig_llegada";
+            this._prox_llegada.DefaultCellStyle = dataGridViewCellStyle3;
+            this._prox_llegada.HeaderText = "Prox Llegada";
+            this._prox_llegada.Name = "_prox_llegada";
             // 
-            // prox_llegada
+            // _rnd_demora
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.prox_llegada.DefaultCellStyle = dataGridViewCellStyle4;
-            this.prox_llegada.HeaderText = "Prox Llegada";
-            this.prox_llegada.Name = "prox_llegada";
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Info;
+            this._rnd_demora.DefaultCellStyle = dataGridViewCellStyle4;
+            this._rnd_demora.HeaderText = "RND Demora estacionamiento";
+            this._rnd_demora.Name = "_rnd_demora";
             // 
-            // rnd_fin_estac
+            // _demora
             // 
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Info;
-            this.rnd_fin_estac.DefaultCellStyle = dataGridViewCellStyle5;
-            this.rnd_fin_estac.HeaderText = "RND Fin Estacionamiento";
-            this.rnd_fin_estac.Name = "rnd_fin_estac";
+            this._demora.DefaultCellStyle = dataGridViewCellStyle5;
+            this._demora.HeaderText = "Demora";
+            this._demora.Name = "_demora";
             // 
-            // tiempo_uso_estac
+            // _fin_estacionamiento_1
             // 
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Info;
-            this.tiempo_uso_estac.DefaultCellStyle = dataGridViewCellStyle6;
-            this.tiempo_uso_estac.HeaderText = "Tiempo Uso Estacionamiento";
-            this.tiempo_uso_estac.Name = "tiempo_uso_estac";
+            this._fin_estacionamiento_1.DefaultCellStyle = dataGridViewCellStyle6;
+            this._fin_estacionamiento_1.HeaderText = "Fin Estacionamiento 1";
+            this._fin_estacionamiento_1.Name = "_fin_estacionamiento_1";
             // 
-            // rnd_demora
+            // _fin_estacionamiento_2
             // 
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Info;
-            this.rnd_demora.DefaultCellStyle = dataGridViewCellStyle7;
-            this.rnd_demora.HeaderText = "RND Demora estacionamiento";
-            this.rnd_demora.Name = "rnd_demora";
+            this._fin_estacionamiento_2.DefaultCellStyle = dataGridViewCellStyle7;
+            this._fin_estacionamiento_2.HeaderText = "Fin Estacionamiento 2";
+            this._fin_estacionamiento_2.Name = "_fin_estacionamiento_2";
             // 
-            // fin_estacionamiento_1
+            // _fin_estacionamiento_3
             // 
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info;
-            this.fin_estacionamiento_1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.fin_estacionamiento_1.HeaderText = "Fin Estacionamiento 1";
-            this.fin_estacionamiento_1.Name = "fin_estacionamiento_1";
+            this._fin_estacionamiento_3.DefaultCellStyle = dataGridViewCellStyle8;
+            this._fin_estacionamiento_3.HeaderText = "Fin Estacionamiento 3";
+            this._fin_estacionamiento_3.Name = "_fin_estacionamiento_3";
             // 
-            // fin_estacionamiento_2
+            // _fin_estacionamiento_4
             // 
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Info;
-            this.fin_estacionamiento_2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.fin_estacionamiento_2.HeaderText = "Fin Estacionamiento 2";
-            this.fin_estacionamiento_2.Name = "fin_estacionamiento_2";
+            this._fin_estacionamiento_4.DefaultCellStyle = dataGridViewCellStyle9;
+            this._fin_estacionamiento_4.HeaderText = "Fin Estacionamiento 4";
+            this._fin_estacionamiento_4.Name = "_fin_estacionamiento_4";
             // 
-            // fin_estacionamiento_3
+            // _fin_estacionamiento_5
             // 
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Info;
-            this.fin_estacionamiento_3.DefaultCellStyle = dataGridViewCellStyle10;
-            this.fin_estacionamiento_3.HeaderText = "Fin Estacionamiento 3";
-            this.fin_estacionamiento_3.Name = "fin_estacionamiento_3";
+            this._fin_estacionamiento_5.DefaultCellStyle = dataGridViewCellStyle10;
+            this._fin_estacionamiento_5.HeaderText = "Fin Estacionamiento 5";
+            this._fin_estacionamiento_5.Name = "_fin_estacionamiento_5";
             // 
-            // fin_estacionamiento_4
+            // _estado_inspector
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Info;
-            this.fin_estacionamiento_4.DefaultCellStyle = dataGridViewCellStyle11;
-            this.fin_estacionamiento_4.HeaderText = "Fin Estacionamiento 4";
-            this.fin_estacionamiento_4.Name = "fin_estacionamiento_4";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Linen;
+            this._estado_inspector.DefaultCellStyle = dataGridViewCellStyle11;
+            this._estado_inspector.HeaderText = "Estado Inspector";
+            this._estado_inspector.Name = "_estado_inspector";
+            this._estado_inspector.Width = 55;
             // 
-            // fin_estacionamiento_5
+            // _prox_inspeccion
             // 
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Info;
-            this.fin_estacionamiento_5.DefaultCellStyle = dataGridViewCellStyle12;
-            this.fin_estacionamiento_5.HeaderText = "Fin Estacionamiento 5";
-            this.fin_estacionamiento_5.Name = "fin_estacionamiento_5";
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Linen;
+            this._prox_inspeccion.DefaultCellStyle = dataGridViewCellStyle12;
+            this._prox_inspeccion.HeaderText = "Prox Inspeccion";
+            this._prox_inspeccion.Name = "_prox_inspeccion";
             // 
-            // estado_lugar_1
+            // _fin_inspeccion
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.PaleGreen;
-            this.estado_lugar_1.DefaultCellStyle = dataGridViewCellStyle13;
-            this.estado_lugar_1.HeaderText = "Estado Lugar 1";
-            this.estado_lugar_1.Name = "estado_lugar_1";
-            this.estado_lugar_1.Width = 50;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Linen;
+            this._fin_inspeccion.DefaultCellStyle = dataGridViewCellStyle13;
+            this._fin_inspeccion.HeaderText = "Fin Inspeccion";
+            this._fin_inspeccion.Name = "_fin_inspeccion";
             // 
-            // estado_lugar_2
+            // _estado_lugar_1
             // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.PaleGreen;
-            this.estado_lugar_2.DefaultCellStyle = dataGridViewCellStyle14;
-            this.estado_lugar_2.HeaderText = "Estado Lugar 2";
-            this.estado_lugar_2.Name = "estado_lugar_2";
-            this.estado_lugar_2.Width = 50;
+            this._estado_lugar_1.DefaultCellStyle = dataGridViewCellStyle14;
+            this._estado_lugar_1.HeaderText = "Estado Lugar 1";
+            this._estado_lugar_1.Name = "_estado_lugar_1";
+            this._estado_lugar_1.Width = 50;
             // 
-            // estado_lugar_3
+            // _estado_lugar_2
             // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle15.BackColor = System.Drawing.Color.PaleGreen;
-            this.estado_lugar_3.DefaultCellStyle = dataGridViewCellStyle15;
-            this.estado_lugar_3.HeaderText = "Estado Lugar 3";
-            this.estado_lugar_3.Name = "estado_lugar_3";
-            this.estado_lugar_3.Width = 50;
+            this._estado_lugar_2.DefaultCellStyle = dataGridViewCellStyle15;
+            this._estado_lugar_2.HeaderText = "Estado Lugar 2";
+            this._estado_lugar_2.Name = "_estado_lugar_2";
+            this._estado_lugar_2.Width = 50;
             // 
-            // estado_lugar_4
+            // _estado_lugar_3
             // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.PaleGreen;
-            this.estado_lugar_4.DefaultCellStyle = dataGridViewCellStyle16;
-            this.estado_lugar_4.HeaderText = "Estado Lugar 4";
-            this.estado_lugar_4.Name = "estado_lugar_4";
-            this.estado_lugar_4.Width = 50;
+            this._estado_lugar_3.DefaultCellStyle = dataGridViewCellStyle16;
+            this._estado_lugar_3.HeaderText = "Estado Lugar 3";
+            this._estado_lugar_3.Name = "_estado_lugar_3";
+            this._estado_lugar_3.Width = 50;
             // 
-            // estado_lugar_5
+            // _estado_lugar_4
             // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.PaleGreen;
-            this.estado_lugar_5.DefaultCellStyle = dataGridViewCellStyle17;
-            this.estado_lugar_5.HeaderText = "Estado Lugar 5";
-            this.estado_lugar_5.Name = "estado_lugar_5";
-            this.estado_lugar_5.Width = 50;
+            this._estado_lugar_4.DefaultCellStyle = dataGridViewCellStyle17;
+            this._estado_lugar_4.HeaderText = "Estado Lugar 4";
+            this._estado_lugar_4.Name = "_estado_lugar_4";
+            this._estado_lugar_4.Width = 50;
             // 
-            // estado_inspector
+            // _estado_lugar_5
             // 
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Linen;
-            this.estado_inspector.DefaultCellStyle = dataGridViewCellStyle18;
-            this.estado_inspector.HeaderText = "Estado Inspector";
-            this.estado_inspector.Name = "estado_inspector";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.PaleGreen;
+            this._estado_lugar_5.DefaultCellStyle = dataGridViewCellStyle18;
+            this._estado_lugar_5.HeaderText = "Estado Lugar 5";
+            this._estado_lugar_5.Name = "_estado_lugar_5";
+            this._estado_lugar_5.Width = 50;
             // 
-            // prox_inspeccion
+            // _acum_multas
             // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Linen;
-            this.prox_inspeccion.DefaultCellStyle = dataGridViewCellStyle19;
-            this.prox_inspeccion.HeaderText = "Prox Inspeccion";
-            this.prox_inspeccion.Name = "prox_inspeccion";
+            this._acum_multas.HeaderText = "Acum Multas";
+            this._acum_multas.Name = "_acum_multas";
             // 
-            // fin_inspeccion
+            // _acum_autos_sin_estacionar
             // 
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Linen;
-            this.fin_inspeccion.DefaultCellStyle = dataGridViewCellStyle20;
-            this.fin_inspeccion.HeaderText = "Fin Inspeccion";
-            this.fin_inspeccion.Name = "fin_inspeccion";
-            // 
-            // acum_multas
-            // 
-            this.acum_multas.HeaderText = "Acum Multas";
-            this.acum_multas.Name = "acum_multas";
-            // 
-            // acum_autos_sin_estacionar
-            // 
-            this.acum_autos_sin_estacionar.HeaderText = "Acum Autos Sin Estacionar";
-            this.acum_autos_sin_estacionar.Name = "acum_autos_sin_estacionar";
+            this._acum_autos_sin_estacionar.HeaderText = "Acum Autos Sin Estacionar";
+            this._acum_autos_sin_estacionar.Name = "_acum_autos_sin_estacionar";
             // 
             // Estacionamiento
             // 
@@ -396,6 +397,8 @@
             this.Controls.Add(this.btn_empezarSim);
             this.Controls.Add(this.gbx_vectorEstado);
             this.Controls.Add(this.dgv_sim);
+            this.MaximumSize = new System.Drawing.Size(950, 495);
+            this.MinimumSize = new System.Drawing.Size(950, 495);
             this.Name = "Estacionamiento";
             this.Text = "Estacionamiento";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Estacionamiento_FormClosing);
@@ -422,27 +425,26 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_Info;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reloj;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rdn_llegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_sig_llegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prox_llegada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rnd_fin_estac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tiempo_uso_estac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rnd_demora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_estacionamiento_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_estacionamiento_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_estacionamiento_3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_estacionamiento_4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_estacionamiento_5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_lugar_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_lugar_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_lugar_3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_lugar_4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_lugar_5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado_inspector;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prox_inspeccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fin_inspeccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn acum_multas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn acum_autos_sin_estacionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _interacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _relojCola;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _tiempo_sig_llegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _prox_llegada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _rnd_demora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _demora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _fin_estacionamiento_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _fin_estacionamiento_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _fin_estacionamiento_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _fin_estacionamiento_4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _fin_estacionamiento_5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _estado_inspector;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _prox_inspeccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _fin_inspeccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _estado_lugar_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _estado_lugar_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _estado_lugar_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _estado_lugar_4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _estado_lugar_5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _acum_multas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _acum_autos_sin_estacionar;
     }
 }
