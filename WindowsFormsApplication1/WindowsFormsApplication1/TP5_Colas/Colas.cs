@@ -9,16 +9,16 @@ namespace WindowsFormsApplication1.TP5_Colas
 {
     class Colas
     {
-        bool demora;
+        string demora;
         int cantGenerar = 2;
 
         double min;
 
+        double rnd = 0;
         public double generarRNDNormal(float media, float desv)
         {
             double[] rndLista;
-            double rnd;
-
+           
             GenerarDistribuciones dis = new GenerarDistribuciones();
 
             rndLista = dis.generar_distribucion_normal(media, desv, cantGenerar);
@@ -27,15 +27,20 @@ namespace WindowsFormsApplication1.TP5_Colas
             return rnd;
         }
 
-        public bool determinarDemora(double rndDemora)
+        public double reiniciarRND()
+        {
+            return rnd = 0;
+        }
+
+        public string determinarDemora(double rndDemora)
         {
             if (rndDemora >= 0.0 && rndDemora < 0.20)
             {
-                demora = true;
+                demora = "Si";
             }
             else if (rndDemora >= 0.20 && rndDemora < 1)
             {
-                demora = false;
+                demora = "No";
             }
             return demora;
         }
