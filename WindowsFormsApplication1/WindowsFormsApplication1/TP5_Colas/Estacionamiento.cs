@@ -156,20 +156,20 @@ namespace WindowsFormsApplication1.TP5_Colas
                 if (i == 0) //Condiciones iniciales
                 {
                     reloj = 0;
-
+                    Math.Round(reloj, 2);
                     //tpoSigLlegada = Math.Round(cola.generarRNDNormal(media, desvEstandar),2);
-                    proxLlegada = reloj + tpoSigLlegada;
+                    proxLlegada = Math.Round(reloj + tpoSigLlegada, 2);
 
                     proxInspeccion = 0;
                     estadoInspector = insp_ausente;
                     proxInspeccion += tpoEntreInspecciones;
                     fin_inspeccion = 0;
 
-                    fin_estacionamiento1 = 0;
-                    fin_estacionamiento2 = 0;
-                    fin_estacionamiento3 = 0;
-                    fin_estacionamiento4 = 0;
-                    fin_estacionamiento5 = 0;
+                    Math.Round(fin_estacionamiento1 = 0, 2);
+                    Math.Round(fin_estacionamiento2 = 0, 2);
+                    Math.Round(fin_estacionamiento3 = 0, 2);
+                    Math.Round(fin_estacionamiento4 = 0, 2);
+                    Math.Round(fin_estacionamiento5 = 0, 2);
 
                     estado_est1 = lug_libre;
                     estado_est2 = lug_libre;
@@ -211,12 +211,12 @@ namespace WindowsFormsApplication1.TP5_Colas
                                 contadorDeLugares++;
 
                                 dgv_sim.Columns.Add("_estado_auto" + autoNro, "Estado auto " + autoNro);
-                                
+
                                 autoNro++;
                                 columnas++;
 
                                 estado_auto = auto_estacionado;
-                                
+
                                 //dgv_sim.Rows[i].Cells[columnas].Value = auto_estacionado;
 
 
@@ -290,7 +290,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                             acAutosSinPoderEstacionar++;
                         }
 
-                    }
+                    }//Auto 1 se va
                     else if (menorTiempo == fin_estacionamiento1)
                     {
                         reloj = fin_estacionamiento1;
@@ -300,7 +300,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                         demora_est1 = false;
                         contadorDeLugares--;
                         //dgv_sim.Rows[i].Cells[columnas].Value = auto_destruccion;
-                    }
+                    }//Auto 2 se va
                     else if (menorTiempo == fin_estacionamiento2)
                     {
                         reloj = fin_estacionamiento2;
@@ -310,7 +310,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                         demora_est2 = false;
                         contadorDeLugares--;
                         //dgv_sim.Rows[i].Cells[columnas].Value = auto_destruccion;
-                    }
+                    }//Auto 3 se va
                     else if (menorTiempo == fin_estacionamiento3)
                     {
                         reloj = fin_estacionamiento3;
@@ -320,7 +320,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                         demora_est3 = false;
                         contadorDeLugares--;
                         //dgv_sim.Rows[i].Cells[columnas].Value = auto_destruccion;
-                    }
+                    }//Auto 4 se va
                     else if (menorTiempo == fin_estacionamiento4)
                     {
                         reloj = fin_estacionamiento4;
@@ -330,7 +330,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                         demora_est4 = false;
                         contadorDeLugares--;
                         //dgv_sim.Rows[i].Cells[columnas].Value = auto_destruccion;
-                    }
+                    }//Auto 5 se va
                     else if (menorTiempo == fin_estacionamiento5)
                     {
                         reloj = fin_estacionamiento5;
@@ -368,11 +368,12 @@ namespace WindowsFormsApplication1.TP5_Colas
                                     {
                                         fin_inspeccion += tpoBoleta;
                                         estadoInspector = insp_realizandoBoleta + j;
-                                        if (aux == 0)
+                                        if (aux == 0 || aux < 1)
                                         {
                                             fin_estacionamiento1 += tpoBoleta;
                                             //dgv_sim.Rows[i].Cells[columnas].Value = auto_recibiendoBoleta;
                                         }
+                                        acMultas++;
                                     }
                                 }
                                 break;
@@ -384,11 +385,12 @@ namespace WindowsFormsApplication1.TP5_Colas
                                     {
                                         fin_inspeccion += tpoBoleta;
                                         estadoInspector = insp_realizandoBoleta + j;
-                                        if (aux == 0)
+                                        if (aux == 0 || aux < 1)
                                         {
                                             fin_estacionamiento2 += tpoBoleta;
-                                            //dgv_sim.Rows[i].Cells[columnas].Value = auto_recibiendoBoleta;
+                                            //dgv_sim.Rows[i].Cells[columnas].Value = auto_recibiendoBoleta;                                            
                                         }
+                                        acMultas++;
                                     }
                                 }
                                 break;
@@ -400,11 +402,12 @@ namespace WindowsFormsApplication1.TP5_Colas
                                     {
                                         fin_inspeccion += tpoBoleta;
                                         estadoInspector = insp_realizandoBoleta + j;
-                                        if (aux == 0)
+                                        if (aux == 0 || aux < 1)
                                         {
                                             fin_estacionamiento3 += tpoBoleta;
-                                            //dgv_sim.Rows[i].Cells[columnas].Value = auto_recibiendoBoleta;
+                                            //dgv_sim.Rows[i].Cells[columnas].Value = auto_recibiendoBoleta;                                           
                                         }
+                                        acMultas++;
                                     }
                                 }
                                 break;
@@ -416,12 +419,13 @@ namespace WindowsFormsApplication1.TP5_Colas
                                     {
                                         fin_inspeccion += tpoBoleta;
                                         estadoInspector = insp_realizandoBoleta + j;
-                                        if (aux == 0)
+                                        if (aux == 0 || aux < 1)
                                         {
                                             fin_estacionamiento4 += tpoBoleta;
-                                            //dgv_sim.Rows[i].Cells[columnas.Value = auto_recibiendoBoleta;
+                                            //dgv_sim.Rows[i].Cells[columnas.Value = auto_recibiendoBoleta;                                            
                                         }
-                                    }
+                                        acMultas++;
+                                    }                                   
                                 }
                                 break;
                             case 5:
@@ -432,12 +436,13 @@ namespace WindowsFormsApplication1.TP5_Colas
                                     {
                                         fin_inspeccion += tpoBoleta;
                                         estadoInspector = insp_realizandoBoleta + j;
-                                        if (aux == 0)
+                                        if (aux == 0 || aux < 1)
                                         {
                                             fin_estacionamiento5 += tpoBoleta;
-                                            //dgv_sim.Rows[i].Cells[columnas].Value = auto_recibiendoBoleta;
+                                            //dgv_sim.Rows[i].Cells[columnas].Value = auto_recibiendoBoleta;                                            
                                         }
-                                    }
+                                        acMultas++;
+                                    }                                    
                                 }
                                 break;
                         }//fin switch
@@ -470,7 +475,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                 //if (fin_estacionamiento1 != 0)
                 //{
                 //    string col = columnas.ToString();
-                    
+
                 //    dgv_sim.Rows[i].Cells[col].Value = estado_auto;
 
                 //}
