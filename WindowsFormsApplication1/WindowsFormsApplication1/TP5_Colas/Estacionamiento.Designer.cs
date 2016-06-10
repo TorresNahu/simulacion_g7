@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_sim = new System.Windows.Forms.DataGridView();
             this._interacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._relojCola = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +91,8 @@
             // 
             // dgv_sim
             // 
+            this.dgv_sim.AllowUserToAddRows = false;
+            this.dgv_sim.AllowUserToDeleteRows = false;
             this.dgv_sim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_sim.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this._interacion,
@@ -116,8 +118,9 @@
             this._acum_autos_sin_estacionar});
             this.dgv_sim.Location = new System.Drawing.Point(12, 185);
             this.dgv_sim.Name = "dgv_sim";
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_sim.RowsDefaultCellStyle = dataGridViewCellStyle57;
+            this.dgv_sim.ReadOnly = true;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_sim.RowsDefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_sim.Size = new System.Drawing.Size(910, 273);
             this.dgv_sim.TabIndex = 11;
             // 
@@ -125,156 +128,177 @@
             // 
             this._interacion.HeaderText = "Iteracion N°";
             this._interacion.Name = "_interacion";
+            this._interacion.ReadOnly = true;
             this._interacion.Width = 50;
             // 
             // _relojCola
             // 
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this._relojCola.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this._relojCola.DefaultCellStyle = dataGridViewCellStyle1;
             this._relojCola.HeaderText = "Reloj";
             this._relojCola.Name = "_relojCola";
+            this._relojCola.ReadOnly = true;
             this._relojCola.Width = 75;
             // 
             // _tiempo_sig_llegada
             // 
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this._tiempo_sig_llegada.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this._tiempo_sig_llegada.DefaultCellStyle = dataGridViewCellStyle2;
             this._tiempo_sig_llegada.HeaderText = "Tiempo Siguiente Llegada";
             this._tiempo_sig_llegada.Name = "_tiempo_sig_llegada";
+            this._tiempo_sig_llegada.ReadOnly = true;
             // 
             // _prox_llegada
             // 
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this._prox_llegada.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this._prox_llegada.DefaultCellStyle = dataGridViewCellStyle3;
             this._prox_llegada.HeaderText = "Prox Llegada";
             this._prox_llegada.Name = "_prox_llegada";
+            this._prox_llegada.ReadOnly = true;
             // 
             // _rnd_demora
             // 
-            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Info;
-            this._rnd_demora.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Info;
+            this._rnd_demora.DefaultCellStyle = dataGridViewCellStyle4;
             this._rnd_demora.HeaderText = "RND Demora estacionamiento";
             this._rnd_demora.Name = "_rnd_demora";
+            this._rnd_demora.ReadOnly = true;
             // 
             // _demora
             // 
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Info;
-            this._demora.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Info;
+            this._demora.DefaultCellStyle = dataGridViewCellStyle5;
             this._demora.HeaderText = "Demora";
             this._demora.Name = "_demora";
+            this._demora.ReadOnly = true;
             // 
             // _fin_estacionamiento_1
             // 
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Info;
-            this._fin_estacionamiento_1.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Info;
+            this._fin_estacionamiento_1.DefaultCellStyle = dataGridViewCellStyle6;
             this._fin_estacionamiento_1.HeaderText = "Fin Estacionamiento 1";
             this._fin_estacionamiento_1.Name = "_fin_estacionamiento_1";
+            this._fin_estacionamiento_1.ReadOnly = true;
             // 
             // _fin_estacionamiento_2
             // 
-            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Info;
-            this._fin_estacionamiento_2.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Info;
+            this._fin_estacionamiento_2.DefaultCellStyle = dataGridViewCellStyle7;
             this._fin_estacionamiento_2.HeaderText = "Fin Estacionamiento 2";
             this._fin_estacionamiento_2.Name = "_fin_estacionamiento_2";
+            this._fin_estacionamiento_2.ReadOnly = true;
             // 
             // _fin_estacionamiento_3
             // 
-            dataGridViewCellStyle46.BackColor = System.Drawing.SystemColors.Info;
-            this._fin_estacionamiento_3.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Info;
+            this._fin_estacionamiento_3.DefaultCellStyle = dataGridViewCellStyle8;
             this._fin_estacionamiento_3.HeaderText = "Fin Estacionamiento 3";
             this._fin_estacionamiento_3.Name = "_fin_estacionamiento_3";
+            this._fin_estacionamiento_3.ReadOnly = true;
             // 
             // _fin_estacionamiento_4
             // 
-            dataGridViewCellStyle47.BackColor = System.Drawing.SystemColors.Info;
-            this._fin_estacionamiento_4.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Info;
+            this._fin_estacionamiento_4.DefaultCellStyle = dataGridViewCellStyle9;
             this._fin_estacionamiento_4.HeaderText = "Fin Estacionamiento 4";
             this._fin_estacionamiento_4.Name = "_fin_estacionamiento_4";
+            this._fin_estacionamiento_4.ReadOnly = true;
             // 
             // _fin_estacionamiento_5
             // 
-            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Info;
-            this._fin_estacionamiento_5.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Info;
+            this._fin_estacionamiento_5.DefaultCellStyle = dataGridViewCellStyle10;
             this._fin_estacionamiento_5.HeaderText = "Fin Estacionamiento 5";
             this._fin_estacionamiento_5.Name = "_fin_estacionamiento_5";
+            this._fin_estacionamiento_5.ReadOnly = true;
             // 
             // _estado_inspector
             // 
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.Linen;
-            this._estado_inspector.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Linen;
+            this._estado_inspector.DefaultCellStyle = dataGridViewCellStyle11;
             this._estado_inspector.HeaderText = "Estado Inspector";
             this._estado_inspector.Name = "_estado_inspector";
+            this._estado_inspector.ReadOnly = true;
             this._estado_inspector.Width = 55;
             // 
             // _prox_inspeccion
             // 
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.Linen;
-            this._prox_inspeccion.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.Linen;
+            this._prox_inspeccion.DefaultCellStyle = dataGridViewCellStyle12;
             this._prox_inspeccion.HeaderText = "Prox Inspeccion";
             this._prox_inspeccion.Name = "_prox_inspeccion";
+            this._prox_inspeccion.ReadOnly = true;
             // 
             // _fin_inspeccion
             // 
-            dataGridViewCellStyle51.BackColor = System.Drawing.Color.Linen;
-            this._fin_inspeccion.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Linen;
+            this._fin_inspeccion.DefaultCellStyle = dataGridViewCellStyle13;
             this._fin_inspeccion.HeaderText = "Fin Inspeccion";
             this._fin_inspeccion.Name = "_fin_inspeccion";
+            this._fin_inspeccion.ReadOnly = true;
             // 
             // _estado_lugar_1
             // 
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.PaleGreen;
-            this._estado_lugar_1.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.PaleGreen;
+            this._estado_lugar_1.DefaultCellStyle = dataGridViewCellStyle14;
             this._estado_lugar_1.HeaderText = "Estado Lugar 1";
             this._estado_lugar_1.Name = "_estado_lugar_1";
+            this._estado_lugar_1.ReadOnly = true;
             this._estado_lugar_1.Width = 50;
             // 
             // _estado_lugar_2
             // 
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle53.BackColor = System.Drawing.Color.PaleGreen;
-            this._estado_lugar_2.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.PaleGreen;
+            this._estado_lugar_2.DefaultCellStyle = dataGridViewCellStyle15;
             this._estado_lugar_2.HeaderText = "Estado Lugar 2";
             this._estado_lugar_2.Name = "_estado_lugar_2";
+            this._estado_lugar_2.ReadOnly = true;
             this._estado_lugar_2.Width = 50;
             // 
             // _estado_lugar_3
             // 
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle54.BackColor = System.Drawing.Color.PaleGreen;
-            this._estado_lugar_3.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.PaleGreen;
+            this._estado_lugar_3.DefaultCellStyle = dataGridViewCellStyle16;
             this._estado_lugar_3.HeaderText = "Estado Lugar 3";
             this._estado_lugar_3.Name = "_estado_lugar_3";
+            this._estado_lugar_3.ReadOnly = true;
             this._estado_lugar_3.Width = 50;
             // 
             // _estado_lugar_4
             // 
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle55.BackColor = System.Drawing.Color.PaleGreen;
-            this._estado_lugar_4.DefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.PaleGreen;
+            this._estado_lugar_4.DefaultCellStyle = dataGridViewCellStyle17;
             this._estado_lugar_4.HeaderText = "Estado Lugar 4";
             this._estado_lugar_4.Name = "_estado_lugar_4";
+            this._estado_lugar_4.ReadOnly = true;
             this._estado_lugar_4.Width = 50;
             // 
             // _estado_lugar_5
             // 
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle56.BackColor = System.Drawing.Color.PaleGreen;
-            this._estado_lugar_5.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.PaleGreen;
+            this._estado_lugar_5.DefaultCellStyle = dataGridViewCellStyle18;
             this._estado_lugar_5.HeaderText = "Estado Lugar 5";
             this._estado_lugar_5.Name = "_estado_lugar_5";
+            this._estado_lugar_5.ReadOnly = true;
             this._estado_lugar_5.Width = 50;
             // 
             // _acum_multas
             // 
             this._acum_multas.HeaderText = "Acum Multas";
             this._acum_multas.Name = "_acum_multas";
+            this._acum_multas.ReadOnly = true;
             // 
             // _acum_autos_sin_estacionar
             // 
             this._acum_autos_sin_estacionar.HeaderText = "Acum Autos Sin Estacionar";
             this._acum_autos_sin_estacionar.Name = "_acum_autos_sin_estacionar";
+            this._acum_autos_sin_estacionar.ReadOnly = true;
             // 
             // btn_resultados
             // 
