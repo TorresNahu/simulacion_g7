@@ -12,24 +12,7 @@ namespace WindowsFormsApplication1.TP5_Colas
         string demora;        
         double min;
         double rnd = 0;
-
-        public double generarRNDNormal(float media, float desv, int cantGenerar)
-        {
-            double[] rndLista;
-           
-            GenerarDistribuciones dis = new GenerarDistribuciones();
-
-            rndLista = dis.generar_distribucion_normal(media, desv, cantGenerar);
-            rnd = rndLista[0];
-
-            return rnd;
-        }
-
-        public double reiniciarRND()
-        {
-            return rnd = 0;
-        }
-
+         
         public string determinarDemora(double rndDemora)
         {
             if (rndDemora >= 0.0 && rndDemora < 0.20)

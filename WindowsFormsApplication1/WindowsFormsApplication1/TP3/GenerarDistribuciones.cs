@@ -62,6 +62,10 @@ namespace Simulacion_G7.TP3
 
         public double[] generar_distribucion_normal(float media, float desviacion_estandar, int cantidad_a_generar)
         {
+            if ((cantidad_a_generar%2)!=0)
+            {
+                cantidad_a_generar++;
+            }
             double[] lista = new double[cantidad_a_generar];
             double pi = Math.PI;
 

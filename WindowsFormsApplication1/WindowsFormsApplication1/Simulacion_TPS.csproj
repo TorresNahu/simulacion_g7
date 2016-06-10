@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormsApplication1</RootNamespace>
     <AssemblyName>WindowsFormsApplication1</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -94,6 +95,7 @@
       <DependentUpon>EjerTortas.cs</DependentUpon>
     </Compile>
     <Compile Include="TP4_Montecarlo\Montecarlo.cs" />
+    <Compile Include="TP5_Colas\Auto.cs" />
     <Compile Include="TP5_Colas\Colas.cs" />
     <Compile Include="TP5_Colas\Estacionamiento.cs">
       <SubType>Form</SubType>
@@ -118,6 +120,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="TP3\Generar_Distribuciones\Distribuciones\DistribucionExponencial.resx">
       <DependentUpon>DistribucionExponencial.cs</DependentUpon>
@@ -143,6 +146,7 @@
     <EmbeddedResource Include="TP5_Colas\InfoAboutProblem.resx">
       <DependentUpon>InfoAboutProblem.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
