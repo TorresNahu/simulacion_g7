@@ -183,6 +183,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                     //tpoSigLlegada = Math.Round(cola.generarRNDNormal(media, desvEstandar),2);
                     proxLlegada = Math.Round(reloj + tpoSigLlegada, 2);
 
+                    rnd_Demora = 0;
                     proxInspeccion = 0;
                     estadoInspector = insp_ausente;
                     proxInspeccion += tpoEntreInspecciones;
