@@ -94,7 +94,7 @@ namespace Simulacion_G7.TP3
             }
             return error_rel_uniforme;
         }
-        public String calcularHipotesisUniforme(double liminf, double limsup, int intervalos, int cantidadNum, double[] lista)
+        public string calcularHipotesisUniforme(double liminf, double limsup, int intervalos, int cantidadNum, double[] lista)
         {
             //Chi hasta 30 grados de libertad
             calculoFrecEsperadaUniforme(intervalos, cantidadNum);
@@ -252,8 +252,7 @@ namespace Simulacion_G7.TP3
 
             return str;
         }
-
-
+        
         //--------------------------------------------------------------------------------------------------------------------------------------
         //Poisson
         double[] lista_frec_esp_poisson;
@@ -261,6 +260,7 @@ namespace Simulacion_G7.TP3
         int grLibertad_poisson;
         int[] lista_frecuenciasPoisson;
         double prob_esperada;
+        int rango_verdadero;
 
         protected int carcularFactorial(int num)
         {
@@ -272,7 +272,21 @@ namespace Simulacion_G7.TP3
 
             return resultado;
         }
+        protected int rangoVerdadero(int[] lista, int intervalos)
+        {
+            int cont = 0;
+            for (int i = 0; i < lista.Length; i++)
+            {
+                if (lista[i] == 0)
+                {
+                    cont++;
+                }
+            }
 
+            rango_verdadero = intervalos - cont;
+
+            return rango_verdadero;
+        }
         private int[] armarListaFrecuenciasPoisson(double[] lista, int cantidadNum, int intervalos, int min, int max)
         {
             float ancho_intervalo1 = (max - min) / (float)intervalos;
@@ -297,7 +311,7 @@ namespace Simulacion_G7.TP3
             }
             return lista_frecuenciasPoisson;
         }
-        private double[] calculoFrecEsperadaPoisson(int intervalos, int cantidadNum, double lambda, int min, int max)
+        private double[] calculoFrecEsperadaPoisson(int intervalos, int rango_verdadero, int cantidadNum, double lambda, int min, int max)
         {
             lista_frec_esp_poisson = new double[intervalos];
             float ancho_intervalo1 = (max - min) / (float)intervalos;
@@ -308,7 +322,7 @@ namespace Simulacion_G7.TP3
             double aux2;
             double aux3;
 
-            for (int i = 0; i < intervalos; i++)
+            for (int i = 0; i < rango_verdadero; i++)
             {
                 for (int j = limInf; j <= limSup; j++)
                 {
@@ -319,7 +333,7 @@ namespace Simulacion_G7.TP3
                     prob_esperada += aux3;
                 }
 
-                lista_frec_esp_poisson[i] = prob_esperada * cantidadNum;
+                lista_frec_esp_poisson[i] = Math.Abs(prob_esperada) * cantidadNum;
 
                 limInf = limSup + 1;
                 limSup = limSup + 1 + ancho_intervalo2;
@@ -401,7 +415,8 @@ namespace Simulacion_G7.TP3
         {
             //Chi hasta 30 grados de libertad
             armarListaFrecuenciasPoisson(lista_Numeros, cantidadNum, intervalos, min, max);
-            calculoFrecEsperadaPoisson(intervalos, cantidadNum, lambda, min, max);
+            rangoVerdadero(lista_frecuenciasPoisson, intervalos);
+            calculoFrecEsperadaPoisson(intervalos, rango_verdadero, cantidadNum, lambda, min, max);
             calcularErrorRelativoPoisson(lista_frecuencias);
             gradosLibertadPoisson(intervalos, 1);
 
