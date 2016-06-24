@@ -18,12 +18,12 @@ namespace Simulacion_G7
         float media;
         float desvEstandar;
         int cantidad_a_generar;
+        public int cant_intervalos;
 
         public DistribucionNormal()
         {
             InitializeComponent();
             txt_media.Focus();
-            txt_CantIntervalos.Enabled = true;
             btn_intentar_de_nuevo.Enabled = false;
         }
 
@@ -62,7 +62,6 @@ namespace Simulacion_G7
             txt_cant_a_generar.Enabled = false;
             txt_media.Enabled = false;
             txt_desvEstandar.Enabled = false;
-            txt_CantIntervalos.Enabled = false;
             btn_generar_numeros.Enabled = false;
         }
 
@@ -72,11 +71,10 @@ namespace Simulacion_G7
             grafico_dist_normal.Titles.Clear();
             grafico_dist_normal.Titles.Add("Distribución Normal");
 
-            //definicion de los intervalos
-            int cant_intervalos = int.Parse(txt_CantIntervalos.Text);
+            //definicion de los intervalos            
             float max = 0;
             float min = 0;
-           
+
             for (int i = 0; i < cantidad_a_generar; i++)
             {
                 if (i == 0)
@@ -99,17 +97,24 @@ namespace Simulacion_G7
                     max = (float)lista[i];
                 }
             }
-            
-            float ancho_intervalo = (max - min) / (float)cant_intervalos;
+
+            int min_int = (int) Math.Floor(min);
+            int max_int = (int) Math.Ceiling(max);
+            cant_intervalos = max_int - min_int;
+
+
+            int ancho_intervalo = 1;//(max - min) / cant_intervalos;
 
             int[] frecuencias = new int[cant_intervalos];
-            int posicion;
+            //int posicion;
 
-            float int_lim_inf = min;
-            float int_lim_sup = min;
+            //float int_lim_inf = min;
+            //float int_lim_sup = min;
+            int int_lim_inf = min_int;
+            int int_lim_sup = min_int;
 
             string[] intervalos = new string[cant_intervalos];
-                        
+
             for (int i = 0; i < cant_intervalos; i++)
             {
                 int_lim_inf = int_lim_sup;
@@ -118,14 +123,26 @@ namespace Simulacion_G7
                 intervalos[i] = int_lim_inf.ToString() + " - " + int_lim_sup.ToString();
 
             }
-            for (int i = 0; i < lista.Length; i++)
+            int_lim_inf = min_int;
+            int_lim_sup = min_int + ancho_intervalo;
+            for (int i = 0; i < cant_intervalos; i++)
             {
-                posicion = (int)((lista[i] - min) / ancho_intervalo);
-                if (posicion == cant_intervalos)
+                //posicion = (int)((lista[i] - min_int) / ancho_intervalo);
+                //if (posicion == cant_intervalos)
+                //{
+                //    posicion = posicion - 1;
+                //}                  
+                //frecuencias[posicion] += 1;
+                for (int j = 0; j < lista.Length; j++)
                 {
-                    posicion = posicion - 1;
-                }                  
-                frecuencias[posicion] += 1;
+                    if (lista[j] > int_lim_inf && lista[j] <= int_lim_sup)
+                    {
+                        frecuencias[i]++;
+                    }
+                }
+                int_lim_inf = int_lim_sup;
+                int_lim_sup = int_lim_inf + ancho_intervalo;
+
             }
 
             //graficar
@@ -143,6 +160,13 @@ namespace Simulacion_G7
                 serie.Points.Add(puntos[i]);
             }
         }
+
+        private void btn_realizarPrueba_Click(object sender, EventArgs e)
+        {
+            PruebaChiCuadrado prueba = new PruebaChiCuadrado();
+            string hipotesis = prueba.calcularHipotesisNormal(lista, cant_intervalos, cantidad_a_generar, media, desvEstandar);
+        }
+
         private Boolean validar()
         {
             //todas las validaciones aca
@@ -176,13 +200,12 @@ namespace Simulacion_G7
             txt_cant_a_generar.Enabled = true;
             txt_media.Enabled = true;
             txt_desvEstandar.Enabled = true;
-            txt_CantIntervalos.Enabled = true;
             btn_generar_numeros.Enabled = true;
 
             txt_cant_a_generar.Text = String.Empty;
             txt_media.Text = String.Empty;
             txt_desvEstandar.Text = String.Empty;
-            txt_CantIntervalos.Text = String.Empty;
+
         }
         private void btn_Salir_Click(object sender, EventArgs e)
         {

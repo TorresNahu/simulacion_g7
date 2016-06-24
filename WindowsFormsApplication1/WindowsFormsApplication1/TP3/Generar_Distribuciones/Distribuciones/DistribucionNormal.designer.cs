@@ -34,8 +34,7 @@
             this.grafico_dist_normal = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgv_numeros = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_CantIntervalos = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btn_realizarPrueba = new System.Windows.Forms.Button();
             this.txt_desvEstandar = new System.Windows.Forms.TextBox();
             this.lbl_desvEstandar = new System.Windows.Forms.Label();
             this.btn_intentar_de_nuevo = new System.Windows.Forms.Button();
@@ -44,7 +43,6 @@
             this.txt_media = new System.Windows.Forms.TextBox();
             this.cant_a_generar = new System.Windows.Forms.Label();
             this.lbl_media = new System.Windows.Forms.Label();
-            this.btn_realizarPrueba = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grafico_dist_normal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_numeros)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,17 +73,15 @@
             // dgv_numeros
             // 
             this.dgv_numeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_numeros.Location = new System.Drawing.Point(14, 231);
+            this.dgv_numeros.Location = new System.Drawing.Point(14, 210);
             this.dgv_numeros.Name = "dgv_numeros";
-            this.dgv_numeros.Size = new System.Drawing.Size(302, 406);
+            this.dgv_numeros.Size = new System.Drawing.Size(302, 427);
             this.dgv_numeros.TabIndex = 8;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btn_realizarPrueba);
-            this.panel1.Controls.Add(this.txt_CantIntervalos);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txt_desvEstandar);
             this.panel1.Controls.Add(this.lbl_desvEstandar);
             this.panel1.Controls.Add(this.btn_intentar_de_nuevo);
@@ -96,24 +92,18 @@
             this.panel1.Controls.Add(this.lbl_media);
             this.panel1.Location = new System.Drawing.Point(47, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 213);
+            this.panel1.Size = new System.Drawing.Size(231, 192);
             this.panel1.TabIndex = 0;
             // 
-            // txt_CantIntervalos
+            // btn_realizarPrueba
             // 
-            this.txt_CantIntervalos.Location = new System.Drawing.Point(126, 95);
-            this.txt_CantIntervalos.Name = "txt_CantIntervalos";
-            this.txt_CantIntervalos.Size = new System.Drawing.Size(65, 20);
-            this.txt_CantIntervalos.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Cantidad de Intervalos";
+            this.btn_realizarPrueba.Location = new System.Drawing.Point(55, 124);
+            this.btn_realizarPrueba.Name = "btn_realizarPrueba";
+            this.btn_realizarPrueba.Size = new System.Drawing.Size(136, 23);
+            this.btn_realizarPrueba.TabIndex = 6;
+            this.btn_realizarPrueba.Text = "Realizar Prueba";
+            this.btn_realizarPrueba.UseVisualStyleBackColor = true;
+            this.btn_realizarPrueba.Click += new System.EventHandler(this.btn_realizarPrueba_Click);
             // 
             // txt_desvEstandar
             // 
@@ -134,7 +124,7 @@
             // 
             // btn_intentar_de_nuevo
             // 
-            this.btn_intentar_de_nuevo.Location = new System.Drawing.Point(55, 179);
+            this.btn_intentar_de_nuevo.Location = new System.Drawing.Point(55, 153);
             this.btn_intentar_de_nuevo.Name = "btn_intentar_de_nuevo";
             this.btn_intentar_de_nuevo.Size = new System.Drawing.Size(136, 23);
             this.btn_intentar_de_nuevo.TabIndex = 7;
@@ -144,7 +134,7 @@
             // 
             // btn_generar_numeros
             // 
-            this.btn_generar_numeros.Location = new System.Drawing.Point(55, 121);
+            this.btn_generar_numeros.Location = new System.Drawing.Point(55, 95);
             this.btn_generar_numeros.Name = "btn_generar_numeros";
             this.btn_generar_numeros.Size = new System.Drawing.Size(136, 23);
             this.btn_generar_numeros.TabIndex = 5;
@@ -186,15 +176,6 @@
             this.lbl_media.TabIndex = 1;
             this.lbl_media.Text = "Media";
             // 
-            // btn_realizarPrueba
-            // 
-            this.btn_realizarPrueba.Location = new System.Drawing.Point(55, 150);
-            this.btn_realizarPrueba.Name = "btn_realizarPrueba";
-            this.btn_realizarPrueba.Size = new System.Drawing.Size(136, 23);
-            this.btn_realizarPrueba.TabIndex = 6;
-            this.btn_realizarPrueba.Text = "Realizar Prueba";
-            this.btn_realizarPrueba.UseVisualStyleBackColor = true;
-            // 
             // DistribucionNormal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,8 +214,6 @@
         private System.Windows.Forms.TextBox txt_media;
         private System.Windows.Forms.Label cant_a_generar;
         private System.Windows.Forms.Label lbl_media;
-        private System.Windows.Forms.TextBox txt_CantIntervalos;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_realizarPrueba;
     }
 }
