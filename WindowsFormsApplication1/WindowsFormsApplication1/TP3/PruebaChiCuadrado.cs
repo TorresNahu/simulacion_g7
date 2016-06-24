@@ -22,8 +22,8 @@ namespace Simulacion_G7.TP3
 
         private double calculoFrecEsperadaUniforme(int intervalos, int cantidadNum)
         {
-            double r = (1.0 / intervalos);
-            frec_esp_uniforme = r * cantidadNum;
+            //double rango = (1.0 / intervalos);
+            frec_esp_uniforme = cantidadNum / intervalos;
 
             return frec_esp_uniforme;
         }
@@ -32,42 +32,54 @@ namespace Simulacion_G7.TP3
             grLibertad_uniforme = intervalos - 1;
             return grLibertad_uniforme;
         }
-        private int[] armarListaFrecuencias(double[] lista, int cantidadNum, int intervalos)
+        private int[] armarListaFrecuencias(double[] lista, int cantidadNum, int intervalos, double lim_inf, double lim_sup)
         {
-            int posicion;
+            //int posicion;
+            double ancho_intervalo = 1.0 / intervalos;
             lista_frecuencias = new int[intervalos];
 
-            for (int i = 0; i < cantidadNum; i++)
-            {
-                if (i == 0)
-                {
-                    max_valor = (float)lista[i];
-                    min_valor = (float)lista[i];
-                }
-                else if (max_valor < lista[i])
-                {
-                    max_valor = (float)lista[i];
-                }
-                else if (min_valor > lista[i])
-                {
-                    min_valor = (float)lista[i];
-                }
-            }
-            ancho_intervalo = (max_valor - min_valor) / intervalos;
-            for (int i = 0; i < lista.Length; i++)
-            {
-                posicion = (int)((lista[i] - min_valor) / ancho_intervalo);
-                if (posicion == intervalos)
-                {
-                    posicion = posicion - 1;
-                }
-                lista_frecuencias[posicion] += 1;
+            //for (int i = 0; i < cantidadNum; i++)
+            //{
+            //    if (i == 0)
+            //    {
+            //        max_valor = (float)lista[i];
+            //        min_valor = (float)lista[i];
+            //    }
+            //    else if (max_valor < lista[i])
+            //    {
+            //        max_valor = (float)lista[i];
+            //    }
+            //    else if (min_valor > lista[i])
+            //    {
+            //        min_valor = (float)lista[i];
+            //    }
+            //}
+            //ancho_intervalo = (max_valor - min_valor) / intervalos;
+            //for (int i = 0; i < lista.Length; i++)
+            //{
+            //    posicion = (int)((lista[i] - min_valor) / ancho_intervalo);
+            //    if (posicion == intervalos)
+            //    {
+            //        posicion = posicion - 1;
+            //    }
+            //    lista_frecuencias[posicion] += 1;
 
-            }
+            //}
+            lim_sup = lim_inf + ancho_intervalo;
+            for (int i = 0; i < intervalos; i++)
+            {
+                for (int j = 0; j < lista.Length; j++)
+                {
+                    if (lista[j] > lim_inf && lista[j] <= lim_sup)
+                    {
+                        lista_frecuencias[i]++;
+                    }
+                }
+                lim_inf = lim_sup;
+                lim_sup = lim_inf + ancho_intervalo;
+            }            
             return lista_frecuencias;
-        }
-
-
+        }        
         private double calcularErrorRelativoUniforme(int[] lista_frecuencias)
         {
             double aux1 = 0.0;
@@ -81,11 +93,11 @@ namespace Simulacion_G7.TP3
             }
             return error_rel_uniforme;
         }
-        public String calcularHipotesisUniforme(int intervalos, int cantidadNum, double[] lista)
+        public String calcularHipotesisUniforme(double liminf, double limsup, int intervalos, int cantidadNum, double[] lista)
         {
             //Chi hasta 30 grados de libertad
             calculoFrecEsperadaUniforme(intervalos, cantidadNum);
-            armarListaFrecuencias(lista, cantidadNum, intervalos);
+            armarListaFrecuencias(lista, cantidadNum, intervalos, liminf, limsup);
             calcularErrorRelativoUniforme(lista_frecuencias);
             gradosLibertadUniforme(intervalos);
             double errTabUnif;
@@ -98,6 +110,7 @@ namespace Simulacion_G7.TP3
             return str;
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------------
         //Para Exponencial
         double[] frec_esp_exp;
         double error_rel_exp;
@@ -186,7 +199,9 @@ namespace Simulacion_G7.TP3
 
             return str;
         }
+
         /*
+        //--------------------------------------------------------------------------------------------------------------------------------------
         //Para Poisson
         double[] frec_esp_poisson;
         double error_rel_poisson;
@@ -274,6 +289,7 @@ namespace Simulacion_G7.TP3
         }
         */
 
+        //--------------------------------------------------------------------------------------------------------------------------------------
         //Para Normal (buuuhhhuuu)
         int[] frec_esp_normal;
         double error_rel_normal;
@@ -359,6 +375,6 @@ namespace Simulacion_G7.TP3
 
             return str;
         }
-        
+
     }
 }

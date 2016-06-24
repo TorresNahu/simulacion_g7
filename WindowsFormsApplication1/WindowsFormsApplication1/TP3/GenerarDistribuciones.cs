@@ -18,7 +18,7 @@ namespace Simulacion_G7.TP3
             for (int i = 0; i < cantidad_a_generar; i++)
             {
                 random = rnd.NextDouble();
-                nuevo_aleatorio = a + random * (b - a);
+                nuevo_aleatorio = a + (random * (b - a));
                 lista[i] = nuevo_aleatorio;
             }
             return lista;

@@ -143,7 +143,6 @@ namespace Simulacion_G7
                 serie.Points.Add(puntos[i]);
             }
         }
-
         private Boolean validar()
         {
             //todas las validaciones aca
@@ -167,7 +166,6 @@ namespace Simulacion_G7
             }
             return true;
         }
-
         private void btn_intentar_de_nuevo_Click(object sender, EventArgs e)
         {
             dgv_numeros.Rows.Clear();
@@ -186,14 +184,12 @@ namespace Simulacion_G7
             txt_desvEstandar.Text = String.Empty;
             txt_CantIntervalos.Text = String.Empty;
         }
-
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             Generar_distribuciones dis = new Generar_distribuciones();
             dis.Show();
             this.Close();
         }
-
         private void txt_media_KeyPress(object sender, KeyPressEventArgs e)
         {
             /*if (char.IsDigit(e.KeyChar) == true)
@@ -246,7 +242,6 @@ namespace Simulacion_G7
                 MessageBox.Show("Aqui debe ir un numero.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }*/
         }
-
         private void DistribucionNormal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Generar_distribuciones dis = new Generar_distribuciones();

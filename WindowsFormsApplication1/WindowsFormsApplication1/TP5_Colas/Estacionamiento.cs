@@ -168,6 +168,7 @@ namespace WindowsFormsApplication1.TP5_Colas
 
             for (int i = 0; i < cantIteraciones; i++)
             {
+                autoX.Estado = null;
                 //tpoSigLleg = cola.generarRNDNormal(media, desvEstandar);                
                 //tpoSigLlegada = Math.Truncate(tpoSigLleg * 100) / 100;
                 //Math.Round(tpoSigLlegada, 2);
@@ -328,6 +329,10 @@ namespace WindowsFormsApplication1.TP5_Colas
                         }
                         else
                         {
+                            string nombre = "_estado_auto" + autoNro;
+                            dgv_sim.Columns.Add(nombre, "Estado auto " + autoNro);
+                            autoNro++;
+                            autoX.Nombre = nombre;
                             autoX.Estado = auto_destruccion;
                             rnd_Demora = 0;
                             demora = string.Empty;
@@ -337,6 +342,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                     }//Auto 1 se va
                     else if (menorTiempo == fin_estacionamiento1)
                     {
+                        rnd_Demora = 0;
                         if (recibMulta_lug1 == false)
                         {
                             reloj = fin_estacionamiento1;
@@ -356,6 +362,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                     }//Auto 2 se va
                     else if (menorTiempo == fin_estacionamiento2)
                     {
+                        rnd_Demora = 0;
                         if (recibMulta_lug2 == false)
                         {
                             reloj = fin_estacionamiento2;
@@ -374,6 +381,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                     }//Auto 3 se va
                     else if (menorTiempo == fin_estacionamiento3)
                     {
+                        rnd_Demora = 0;
                         if (recibMulta_lug3 == false)
                         {
                             reloj = fin_estacionamiento3;
@@ -392,6 +400,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                     }//Auto 4 se va
                     else if (menorTiempo == fin_estacionamiento4)
                     {
+                        rnd_Demora = 0;
                         if (recibMulta_lug4 == false)
                         {
                             reloj = fin_estacionamiento4;
@@ -410,6 +419,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                     }//Auto 5 se va
                     else if (menorTiempo == fin_estacionamiento5)
                     {
+                        rnd_Demora = 0;
                         if (recibMulta_lug5 == false)
                         {
                             reloj = fin_estacionamiento5;
@@ -581,17 +591,15 @@ namespace WindowsFormsApplication1.TP5_Colas
                 {
                     dgv_sim.Rows[i].Cells[auto5.Nombre].Value = auto5.Estado.ToString();
                 }
-                //if (autoX.Estado != null)
-                //{
-                //    dgv_sim.Rows[i].Cells[(dgv_sim.Columns.Count)-1].Value = autoX.Estado.ToString();
-                //}
+                if (autoX.Estado != null)
+                {
+                    dgv_sim.Rows[i].Cells[autoX.Nombre].Value = autoX.Estado.ToString();
+                }
                 
                 tpoSigLlegada = 0;
             }
             btn_tryAgain.Focus();
         }
-
-
 
         private bool validar()
         {
@@ -629,26 +637,22 @@ namespace WindowsFormsApplication1.TP5_Colas
             }
             return true;
         }
-
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             Principal main = new Principal();
             main.Show();
             Close();
         }
-
         private void Estacionamiento_FormClosing(object sender, FormClosingEventArgs e)
         {
             Principal main = new Principal();
             main.Show();
         }
-
         private void btn_Info_Click(object sender, EventArgs e)
         {
             InfoAboutProblem iap = new InfoAboutProblem();
             iap.Show();
         }
-
         private void btn_tryAgain_Click(object sender, EventArgs e)
         {
             tryAgain();
@@ -684,7 +688,6 @@ namespace WindowsFormsApplication1.TP5_Colas
             auto4 = new Auto();
             auto5 = new Auto();
         }
-
         private void btn_resultados_Click(object sender, EventArgs e)
         {
 

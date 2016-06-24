@@ -20,9 +20,7 @@ namespace Simulacion_G7
         private int cantidad_de_numeros;
 
         int cant_intervalos;
-
         
-
         public DistribucionUniforme()
         {
             InitializeComponent();
@@ -68,13 +66,11 @@ namespace Simulacion_G7
 
             return true;
         }
-
         private void btn_generar_numeros_Click(object sender, EventArgs e)
         {
             if (validar() == true)
             {
                 GenerarDistribuciones actual = new GenerarDistribuciones();
-
                 lista = actual.generar_distibucion_uniforme(lim_inf, lim_sup, cantidad_de_numeros);
 
                 for (int i = 0; i < lista.Length; i++)
@@ -92,6 +88,7 @@ namespace Simulacion_G7
                 btn_generar_numeros.Enabled = false;
             }
         }
+
         private void graficar_distribucion()
         {
             //titulo del grafico
@@ -125,7 +122,6 @@ namespace Simulacion_G7
                 int_lim_sup = int_lim_sup + ancho_intervalo;
 
                 intervalos[i] = int_lim_inf.ToString() + " - " + int_lim_sup.ToString();
-
             }
 
             //graficar
@@ -147,13 +143,11 @@ namespace Simulacion_G7
 
         private void DistribucionUniforme_Load(object sender, EventArgs e)
         {
-            dgv_numeros.Columns.Add("orden", "Orden");
-            dgv_numeros.Columns.Add("numero", "Nro generado");
-
+            dgv_numeros.Columns.Add("_orden", "Orden");
+            dgv_numeros.Columns.Add("_numero", "Nro generado");
             //btn_intentar_de_nuevo.Visible = false;
             txt_lim_inferior.Focus();
         }
-
         private void btn_intentar_de_nuevo_Click(object sender, EventArgs e)
         {
             dgv_numeros.Rows.Clear();
@@ -173,7 +167,6 @@ namespace Simulacion_G7
             txt_lim_superior.Text = String.Empty;
             txt_lim_inferior.Focus();
         }
-
         private void txt_lim_inferior_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == true)
@@ -255,8 +248,11 @@ namespace Simulacion_G7
 
         private void btn_pruebaChi_Click(object sender, EventArgs e)
         {
+            lim_inf = int.Parse(txt_lim_inferior.Text);
+            lim_sup = int.Parse(txt_lim_superior.Text);
+
             PruebaChiCuadrado prueba = new PruebaChiCuadrado();
-            string hipotesis = prueba.calcularHipotesisUniforme(cant_intervalos, cantidad_de_numeros, lista);
+            string hipotesis = prueba.calcularHipotesisUniforme(lim_inf, lim_sup, cant_intervalos, cantidad_de_numeros, lista);
             //Esto era para probar si andaba.
             MessageBox.Show(hipotesis, "Prueba de Chi-Cuadrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
