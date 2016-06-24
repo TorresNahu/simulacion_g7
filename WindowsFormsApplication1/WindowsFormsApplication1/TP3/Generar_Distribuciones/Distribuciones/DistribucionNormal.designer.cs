@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.btn_Salir = new System.Windows.Forms.Button();
             this.grafico_dist_normal = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgv_numeros = new System.Windows.Forms.DataGridView();
@@ -43,6 +43,8 @@
             this.txt_media = new System.Windows.Forms.TextBox();
             this.cant_a_generar = new System.Windows.Forms.Label();
             this.lbl_media = new System.Windows.Forms.Label();
+            this.txt_cantIntervalos = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grafico_dist_normal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_numeros)).BeginInit();
             this.panel1.SuspendLayout();
@@ -60,10 +62,10 @@
             // 
             // grafico_dist_normal
             // 
-            chartArea2.Name = "ChartArea1";
-            this.grafico_dist_normal.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.grafico_dist_normal.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.grafico_dist_normal.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.grafico_dist_normal.Legends.Add(legend3);
             this.grafico_dist_normal.Location = new System.Drawing.Point(350, 12);
             this.grafico_dist_normal.Name = "grafico_dist_normal";
             this.grafico_dist_normal.Size = new System.Drawing.Size(669, 625);
@@ -73,14 +75,16 @@
             // dgv_numeros
             // 
             this.dgv_numeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_numeros.Location = new System.Drawing.Point(14, 210);
+            this.dgv_numeros.Location = new System.Drawing.Point(14, 232);
             this.dgv_numeros.Name = "dgv_numeros";
-            this.dgv_numeros.Size = new System.Drawing.Size(302, 427);
+            this.dgv_numeros.Size = new System.Drawing.Size(302, 405);
             this.dgv_numeros.TabIndex = 8;
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txt_cantIntervalos);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_realizarPrueba);
             this.panel1.Controls.Add(this.txt_desvEstandar);
             this.panel1.Controls.Add(this.lbl_desvEstandar);
@@ -92,12 +96,12 @@
             this.panel1.Controls.Add(this.lbl_media);
             this.panel1.Location = new System.Drawing.Point(47, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 192);
+            this.panel1.Size = new System.Drawing.Size(231, 214);
             this.panel1.TabIndex = 0;
             // 
             // btn_realizarPrueba
             // 
-            this.btn_realizarPrueba.Location = new System.Drawing.Point(55, 124);
+            this.btn_realizarPrueba.Location = new System.Drawing.Point(55, 150);
             this.btn_realizarPrueba.Name = "btn_realizarPrueba";
             this.btn_realizarPrueba.Size = new System.Drawing.Size(136, 23);
             this.btn_realizarPrueba.TabIndex = 6;
@@ -124,7 +128,7 @@
             // 
             // btn_intentar_de_nuevo
             // 
-            this.btn_intentar_de_nuevo.Location = new System.Drawing.Point(55, 153);
+            this.btn_intentar_de_nuevo.Location = new System.Drawing.Point(55, 179);
             this.btn_intentar_de_nuevo.Name = "btn_intentar_de_nuevo";
             this.btn_intentar_de_nuevo.Size = new System.Drawing.Size(136, 23);
             this.btn_intentar_de_nuevo.TabIndex = 7;
@@ -134,7 +138,7 @@
             // 
             // btn_generar_numeros
             // 
-            this.btn_generar_numeros.Location = new System.Drawing.Point(55, 95);
+            this.btn_generar_numeros.Location = new System.Drawing.Point(55, 121);
             this.btn_generar_numeros.Name = "btn_generar_numeros";
             this.btn_generar_numeros.Size = new System.Drawing.Size(136, 23);
             this.btn_generar_numeros.TabIndex = 5;
@@ -176,6 +180,23 @@
             this.lbl_media.TabIndex = 1;
             this.lbl_media.Text = "Media";
             // 
+            // txt_cantIntervalos
+            // 
+            this.txt_cantIntervalos.Location = new System.Drawing.Point(126, 95);
+            this.txt_cantIntervalos.Name = "txt_cantIntervalos";
+            this.txt_cantIntervalos.Size = new System.Drawing.Size(65, 20);
+            this.txt_cantIntervalos.TabIndex = 4;
+            this.txt_cantIntervalos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantIntervalos_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Cantidad de intervalos\r\n";
+            // 
             // DistribucionNormal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,5 +236,7 @@
         private System.Windows.Forms.Label cant_a_generar;
         private System.Windows.Forms.Label lbl_media;
         private System.Windows.Forms.Button btn_realizarPrueba;
+        private System.Windows.Forms.TextBox txt_cantIntervalos;
+        private System.Windows.Forms.Label label1;
     }
 }

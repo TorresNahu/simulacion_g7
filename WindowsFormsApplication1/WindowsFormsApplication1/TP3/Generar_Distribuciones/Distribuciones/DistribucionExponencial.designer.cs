@@ -32,12 +32,12 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.lbl_lambda = new System.Windows.Forms.Label();
             this.cant_a_generar = new System.Windows.Forms.Label();
-            this.lbl_cant_intervalos = new System.Windows.Forms.Label();
             this.txt_lambda = new System.Windows.Forms.TextBox();
             this.txt_cant_a_generar = new System.Windows.Forms.TextBox();
-            this.txt_cant_intervalos = new System.Windows.Forms.TextBox();
             this.btn_generar_numeros = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_cant_intervalos = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_pruebaChi = new System.Windows.Forms.Button();
             this.btn_intentar_de_nuevo = new System.Windows.Forms.Button();
             this.dgv_numeros = new System.Windows.Forms.DataGridView();
@@ -66,15 +66,6 @@
             this.cant_a_generar.TabIndex = 2;
             this.cant_a_generar.Text = "Cantidad a generar";
             // 
-            // lbl_cant_intervalos
-            // 
-            this.lbl_cant_intervalos.AutoSize = true;
-            this.lbl_cant_intervalos.Location = new System.Drawing.Point(9, 79);
-            this.lbl_cant_intervalos.Name = "lbl_cant_intervalos";
-            this.lbl_cant_intervalos.Size = new System.Drawing.Size(112, 13);
-            this.lbl_cant_intervalos.TabIndex = 2;
-            this.lbl_cant_intervalos.Text = "Cantidad de intervalos";
-            // 
             // txt_lambda
             // 
             this.txt_lambda.Location = new System.Drawing.Point(127, 24);
@@ -91,14 +82,6 @@
             this.txt_cant_a_generar.TabIndex = 2;
             this.txt_cant_a_generar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cant_a_generar_KeyPress);
             // 
-            // txt_cant_intervalos
-            // 
-            this.txt_cant_intervalos.Location = new System.Drawing.Point(126, 76);
-            this.txt_cant_intervalos.Name = "txt_cant_intervalos";
-            this.txt_cant_intervalos.Size = new System.Drawing.Size(65, 20);
-            this.txt_cant_intervalos.TabIndex = 3;
-            this.txt_cant_intervalos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cant_intervalos_KeyPress);
-            // 
             // btn_generar_numeros
             // 
             this.btn_generar_numeros.Location = new System.Drawing.Point(55, 102);
@@ -111,19 +94,35 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txt_cant_intervalos);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_pruebaChi);
             this.panel1.Controls.Add(this.btn_intentar_de_nuevo);
             this.panel1.Controls.Add(this.btn_generar_numeros);
-            this.panel1.Controls.Add(this.txt_cant_intervalos);
             this.panel1.Controls.Add(this.txt_cant_a_generar);
             this.panel1.Controls.Add(this.txt_lambda);
-            this.panel1.Controls.Add(this.lbl_cant_intervalos);
             this.panel1.Controls.Add(this.cant_a_generar);
             this.panel1.Controls.Add(this.lbl_lambda);
             this.panel1.Location = new System.Drawing.Point(77, 25);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 199);
+            this.panel1.Size = new System.Drawing.Size(225, 195);
             this.panel1.TabIndex = 4;
+            // 
+            // txt_cant_intervalos
+            // 
+            this.txt_cant_intervalos.Location = new System.Drawing.Point(126, 76);
+            this.txt_cant_intervalos.Name = "txt_cant_intervalos";
+            this.txt_cant_intervalos.Size = new System.Drawing.Size(65, 20);
+            this.txt_cant_intervalos.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Cantidad de intervalos\r\n";
             // 
             // btn_pruebaChi
             // 
@@ -148,9 +147,9 @@
             // dgv_numeros
             // 
             this.dgv_numeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_numeros.Location = new System.Drawing.Point(40, 247);
+            this.dgv_numeros.Location = new System.Drawing.Point(40, 226);
             this.dgv_numeros.Name = "dgv_numeros";
-            this.dgv_numeros.Size = new System.Drawing.Size(302, 418);
+            this.dgv_numeros.Size = new System.Drawing.Size(302, 437);
             this.dgv_numeros.TabIndex = 7;
             // 
             // grafico_dist_exponencial
@@ -203,10 +202,8 @@
 
         private System.Windows.Forms.Label lbl_lambda;
         private System.Windows.Forms.Label cant_a_generar;
-        private System.Windows.Forms.Label lbl_cant_intervalos;
         private System.Windows.Forms.TextBox txt_lambda;
         private System.Windows.Forms.TextBox txt_cant_a_generar;
-        private System.Windows.Forms.TextBox txt_cant_intervalos;
         private System.Windows.Forms.Button btn_generar_numeros;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgv_numeros;
@@ -214,5 +211,7 @@
         private System.Windows.Forms.Button btn_intentar_de_nuevo;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_pruebaChi;
+        private System.Windows.Forms.TextBox txt_cant_intervalos;
+        private System.Windows.Forms.Label label1;
     }
 }

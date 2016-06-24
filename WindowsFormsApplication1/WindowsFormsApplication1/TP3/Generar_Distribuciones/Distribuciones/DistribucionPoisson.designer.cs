@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.btn_intentar_de_nuevo = new System.Windows.Forms.Button();
             this.grafico_dist_poisson = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgv_numeros = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_cantidadIntevalos = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_realizarPrueba = new System.Windows.Forms.Button();
             this.btn_generar_numeros = new System.Windows.Forms.Button();
             this.txt_cant_a_generar = new System.Windows.Forms.TextBox();
@@ -48,36 +50,38 @@
             // 
             // btn_intentar_de_nuevo
             // 
-            this.btn_intentar_de_nuevo.Location = new System.Drawing.Point(55, 134);
+            this.btn_intentar_de_nuevo.Location = new System.Drawing.Point(55, 160);
             this.btn_intentar_de_nuevo.Name = "btn_intentar_de_nuevo";
             this.btn_intentar_de_nuevo.Size = new System.Drawing.Size(136, 23);
-            this.btn_intentar_de_nuevo.TabIndex = 12;
+            this.btn_intentar_de_nuevo.TabIndex = 6;
             this.btn_intentar_de_nuevo.Text = "Intentar de Nuevo";
             this.btn_intentar_de_nuevo.UseVisualStyleBackColor = true;
             this.btn_intentar_de_nuevo.Click += new System.EventHandler(this.btn_intentar_de_nuevo_Click);
             // 
             // grafico_dist_poisson
             // 
-            chartArea2.Name = "ChartArea1";
-            this.grafico_dist_poisson.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.grafico_dist_poisson.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.grafico_dist_poisson.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.grafico_dist_poisson.Legends.Add(legend1);
             this.grafico_dist_poisson.Location = new System.Drawing.Point(348, 12);
             this.grafico_dist_poisson.Name = "grafico_dist_poisson";
             this.grafico_dist_poisson.Size = new System.Drawing.Size(669, 588);
-            this.grafico_dist_poisson.TabIndex = 11;
+            this.grafico_dist_poisson.TabIndex = 8;
             this.grafico_dist_poisson.TabStop = false;
             // 
             // dgv_numeros
             // 
             this.dgv_numeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_numeros.Location = new System.Drawing.Point(12, 188);
+            this.dgv_numeros.Location = new System.Drawing.Point(12, 210);
             this.dgv_numeros.Name = "dgv_numeros";
-            this.dgv_numeros.Size = new System.Drawing.Size(302, 412);
-            this.dgv_numeros.TabIndex = 10;
+            this.dgv_numeros.Size = new System.Drawing.Size(302, 390);
+            this.dgv_numeros.TabIndex = 99;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txt_cantidadIntevalos);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_realizarPrueba);
             this.panel1.Controls.Add(this.btn_intentar_de_nuevo);
             this.panel1.Controls.Add(this.btn_generar_numeros);
@@ -87,22 +91,38 @@
             this.panel1.Controls.Add(this.lbl_lambda);
             this.panel1.Location = new System.Drawing.Point(45, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(231, 170);
+            this.panel1.Size = new System.Drawing.Size(231, 192);
             this.panel1.TabIndex = 9;
+            // 
+            // txt_cantidadIntevalos
+            // 
+            this.txt_cantidadIntevalos.Location = new System.Drawing.Point(126, 76);
+            this.txt_cantidadIntevalos.Name = "txt_cantidadIntevalos";
+            this.txt_cantidadIntevalos.Size = new System.Drawing.Size(65, 20);
+            this.txt_cantidadIntevalos.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Cantidad de Intervalos\r\n";
             // 
             // btn_realizarPrueba
             // 
-            this.btn_realizarPrueba.Location = new System.Drawing.Point(55, 105);
+            this.btn_realizarPrueba.Location = new System.Drawing.Point(55, 131);
             this.btn_realizarPrueba.Name = "btn_realizarPrueba";
             this.btn_realizarPrueba.Size = new System.Drawing.Size(136, 23);
-            this.btn_realizarPrueba.TabIndex = 13;
+            this.btn_realizarPrueba.TabIndex = 5;
             this.btn_realizarPrueba.Text = "Realizar Prueba\r\n";
             this.btn_realizarPrueba.UseVisualStyleBackColor = true;
             this.btn_realizarPrueba.Click += new System.EventHandler(this.btn_realizarPrueba_Click);
             // 
             // btn_generar_numeros
             // 
-            this.btn_generar_numeros.Location = new System.Drawing.Point(55, 76);
+            this.btn_generar_numeros.Location = new System.Drawing.Point(55, 102);
             this.btn_generar_numeros.Name = "btn_generar_numeros";
             this.btn_generar_numeros.Size = new System.Drawing.Size(136, 23);
             this.btn_generar_numeros.TabIndex = 4;
@@ -149,7 +169,7 @@
             this.btn_Salir.Location = new System.Drawing.Point(942, 614);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 23);
-            this.btn_Salir.TabIndex = 12;
+            this.btn_Salir.TabIndex = 9;
             this.btn_Salir.Text = "Salir";
             this.btn_Salir.UseVisualStyleBackColor = true;
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
@@ -191,5 +211,7 @@
         private System.Windows.Forms.Label lbl_lambda;
         private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Button btn_realizarPrueba;
+        private System.Windows.Forms.TextBox txt_cantidadIntevalos;
+        private System.Windows.Forms.Label label1;
     }
 }

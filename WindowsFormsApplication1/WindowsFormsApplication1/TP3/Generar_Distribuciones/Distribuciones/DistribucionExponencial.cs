@@ -21,10 +21,12 @@ namespace Simulacion_G7
 
         int datosEmpiricos = 1;
         int cant_intervalos;
-        int[] frecuencias;
+        //int[] frecuencias;
         float ancho_intervalo;
         float max_valor_rnd;
         float min_valor_rnd;
+        public int min_int;
+        public int max_int;
 
         public DistribucionExponencial()
         {
@@ -62,7 +64,7 @@ namespace Simulacion_G7
                 btn_generar_numeros.Enabled = false;
             }
         }
-        private Boolean validar()
+        private bool validar()
         {
             //todas las validaciones aca
             if (txt_lambda.Text == string.Empty)
@@ -116,40 +118,40 @@ namespace Simulacion_G7
                 }
             }
 
-            ancho_intervalo = (max_valor_rnd - min_valor_rnd) / cant_intervalos;
+            min_int = (int)Math.Floor(min_valor_rnd);
+            max_int = (int)Math.Ceiling(max_valor_rnd);
 
-            frecuencias = new int[cant_intervalos];
-            int posicion;
+            ancho_intervalo = (max_int - min_int) / (float) cant_intervalos;
 
-            float int_lim_inf = min_valor_rnd;
-            float int_lim_sup = min_valor_rnd;
-
+            int[] frecuencias = new int[cant_intervalos];
+            
             string[] intervalos = new string[cant_intervalos];
 
-            //posicionamiento de los numeros en los intervalos
-            for (int i = 0; i < lista.Length; i++)
-            {
-                posicion = (int)((lista[i] - min_valor_rnd) / ancho_intervalo);
-                if (posicion == cant_intervalos)
-                {
-                    posicion = posicion - 1;
-                }
-                frecuencias[posicion] += 1;
-            }
-            //for (int i = 0; i < lista.Length; i++)
-            //{
-            //    posicion = (int)((lista[i] - min_valor_rnd) / ancho_intervalo);
+            float int_lim_inf = min_int;
+            float int_lim_sup = min_int;
 
-            //    frecuencias[posicion] += 1;
-            //}
             for (int i = 0; i < cant_intervalos; i++)
             {
                 int_lim_inf = int_lim_sup;
                 int_lim_sup = int_lim_sup + ancho_intervalo;
 
                 intervalos[i] = int_lim_inf.ToString() + " - " + int_lim_sup.ToString();
-
             }
+            int_lim_inf = min_int;
+            int_lim_sup = min_int + ancho_intervalo;
+            for (int i = 0; i < cantidad_intervalos; i++)
+            {                
+                for (int j = 0; j < lista.Length; j++)
+                {
+                    if (lista[j] > int_lim_inf && lista[j] <= int_lim_sup)
+                    {
+                        frecuencias[i]++;
+                    }
+                }
+                int_lim_inf = int_lim_sup;
+                int_lim_sup = int_lim_inf + ancho_intervalo;
+            }
+            
 
             //graficar
             string[] series = intervalos;
@@ -166,7 +168,6 @@ namespace Simulacion_G7
                 serie.Points.Add(puntos[i]);
             }
         }
-
         private void btn_intentar_de_nuevo_Click(object sender, EventArgs e)
         {
             dgv_numeros.Rows.Clear();
@@ -179,13 +180,12 @@ namespace Simulacion_G7
             txt_lambda.Enabled = true;
             btn_generar_numeros.Enabled = true;
 
-            txt_cant_a_generar.Text = String.Empty;
-            txt_cant_intervalos.Text = String.Empty;
-            txt_lambda.Text = String.Empty;
+            txt_cant_a_generar.Text = string.Empty;
+            txt_cant_intervalos.Text = string.Empty;
+            txt_lambda.Text = string.Empty;
             txt_lambda.Focus();
 
         }
-
         private void btn_Salir_Click(object sender, EventArgs e)
         {
             Generar_distribuciones dis = new Generar_distribuciones();
@@ -241,7 +241,6 @@ namespace Simulacion_G7
                 MessageBox.Show("Aqui debe ir un numero.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void DistribucionExponencial_FormClosing(object sender, FormClosingEventArgs e)
         {
             Generar_distribuciones dis = new Generar_distribuciones();
@@ -251,7 +250,7 @@ namespace Simulacion_G7
         private void btn_pruebaChi_Click(object sender, EventArgs e)
         {
             PruebaChiCuadrado prueba = new PruebaChiCuadrado();
-            string hipotesis = prueba.calcularHipotesisExponencial(cant_intervalos, cantidad_a_generar, lambda, datosEmpiricos, frecuencias, min_valor_rnd, ancho_intervalo);
+            string hipotesis = prueba.calcularHipotesisExponencial(lista, cant_intervalos, cantidad_a_generar, lambda, min_int, max_int);
             MessageBox.Show(hipotesis, "Prueba de Chi-Cuadrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

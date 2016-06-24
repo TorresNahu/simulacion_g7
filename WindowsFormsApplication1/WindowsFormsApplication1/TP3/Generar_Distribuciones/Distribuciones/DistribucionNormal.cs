@@ -17,8 +17,10 @@ namespace Simulacion_G7
         double[] lista;
         float media;
         float desvEstandar;
-        int cantidad_a_generar;
+        int cantidad_a_generar;        
         public int cant_intervalos;
+        public int min_int;
+        public int max_int;
 
         public DistribucionNormal()
         {
@@ -49,6 +51,7 @@ namespace Simulacion_G7
             media = float.Parse(txt_media.Text);
             desvEstandar = float.Parse(txt_desvEstandar.Text);
             cantidad_a_generar = int.Parse(txt_cant_a_generar.Text);
+            cant_intervalos = int.Parse(txt_cantIntervalos.Text);
 
             GenerarDistribuciones actual = new GenerarDistribuciones();
             lista = actual.generar_distribucion_normal(media, desvEstandar, cantidad_a_generar);
@@ -62,6 +65,7 @@ namespace Simulacion_G7
             txt_cant_a_generar.Enabled = false;
             txt_media.Enabled = false;
             txt_desvEstandar.Enabled = false;
+            txt_cantIntervalos.Enabled = false;
             btn_generar_numeros.Enabled = false;
         }
 
@@ -98,20 +102,19 @@ namespace Simulacion_G7
                 }
             }
 
-            int min_int = (int) Math.Floor(min);
-            int max_int = (int) Math.Ceiling(max);
-            cant_intervalos = max_int - min_int;
+            min_int = (int)Math.Floor(min);
+            max_int = (int)Math.Ceiling(max);
+            //cant_intervalos = max_int - min_int;
 
-
-            int ancho_intervalo = 1;//(max - min) / cant_intervalos;
+            float ancho_intervalo = (max_int - min_int) / (float) cant_intervalos;
 
             int[] frecuencias = new int[cant_intervalos];
             //int posicion;
 
             //float int_lim_inf = min;
             //float int_lim_sup = min;
-            int int_lim_inf = min_int;
-            int int_lim_sup = min_int;
+            float int_lim_inf = min_int;
+            float int_lim_sup = min_int;
 
             string[] intervalos = new string[cant_intervalos];
 
@@ -164,7 +167,8 @@ namespace Simulacion_G7
         private void btn_realizarPrueba_Click(object sender, EventArgs e)
         {
             PruebaChiCuadrado prueba = new PruebaChiCuadrado();
-            string hipotesis = prueba.calcularHipotesisNormal(lista, cant_intervalos, cantidad_a_generar, media, desvEstandar);
+            string hipotesis = prueba.calcularHipotesisNormal(lista, cant_intervalos, cantidad_a_generar, media, desvEstandar, min_int, max_int);
+            MessageBox.Show(hipotesis, "Prueba de Chi-Cuadrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private Boolean validar()
@@ -188,6 +192,12 @@ namespace Simulacion_G7
                 MessageBox.Show("Campo Obligatorio", "simulacion_g7", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            if (txt_cantIntervalos.Text == string.Empty)
+            {
+                txt_cantIntervalos.Focus();
+                MessageBox.Show("Campo Obligatorio", "simulacion_g7", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
         private void btn_intentar_de_nuevo_Click(object sender, EventArgs e)
@@ -200,11 +210,13 @@ namespace Simulacion_G7
             txt_cant_a_generar.Enabled = true;
             txt_media.Enabled = true;
             txt_desvEstandar.Enabled = true;
+            txt_cantIntervalos.Enabled = true;
             btn_generar_numeros.Enabled = true;
 
-            txt_cant_a_generar.Text = String.Empty;
-            txt_media.Text = String.Empty;
-            txt_desvEstandar.Text = String.Empty;
+            txt_cant_a_generar.Text = string.Empty;
+            txt_media.Text = string.Empty;
+            txt_desvEstandar.Text = string.Empty;
+            txt_cantIntervalos.Text = string.Empty;
 
         }
         private void btn_Salir_Click(object sender, EventArgs e)
@@ -265,10 +277,16 @@ namespace Simulacion_G7
                 MessageBox.Show("Aqui debe ir un numero.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }*/
         }
+        private void txt_cantIntervalos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
         private void DistribucionNormal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Generar_distribuciones dis = new Generar_distribuciones();
             dis.Show();
         }
+
+        
     }
 }
