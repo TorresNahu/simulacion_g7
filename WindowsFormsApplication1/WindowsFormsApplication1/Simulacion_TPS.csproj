@@ -109,6 +109,12 @@
     <Compile Include="TP5_Colas\InfoAboutProblem.Designer.cs">
       <DependentUpon>InfoAboutProblem.cs</DependentUpon>
     </Compile>
+    <Compile Include="TP5_Colas\TP6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TP5_Colas\TP6.designer.cs">
+      <DependentUpon>TP6.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TP5_Colas\InfoAboutProblem.resx">
       <DependentUpon>InfoAboutProblem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TP5_Colas\TP6.resx">
+      <DependentUpon>TP6.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

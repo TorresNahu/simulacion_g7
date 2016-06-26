@@ -88,6 +88,12 @@ namespace WindowsFormsApplication1.TP5_Colas
         int acMultas;
         int acAutosSinPoderEstacionar;
 
+        //Interrupcion
+        double rnd_Interrupcion;
+        int tamano_interrupcion;
+        double tpo_interrupcion;
+        double prox_interrupcion;
+        
         public Estacionamiento()
         {
             InitializeComponent();
@@ -190,6 +196,11 @@ namespace WindowsFormsApplication1.TP5_Colas
                     proxInspeccion += tpoEntreInspecciones;
                     fin_inspeccion = 0;
 
+                    rnd_Interrupcion = rnd.NextDouble();
+                    tamano_interrupcion = cola.determinarTamanoInestabilidad(rnd_Interrupcion);
+                    tpo_interrupcion = cola.determinarTiempoInterrupcion(tamano_interrupcion);
+                    prox_interrupcion = reloj + tpo_interrupcion;
+
                     Math.Round(fin_estacionamiento1 = 0, 2);
                     Math.Round(fin_estacionamiento2 = 0, 2);
                     Math.Round(fin_estacionamiento3 = 0, 2);
@@ -209,7 +220,8 @@ namespace WindowsFormsApplication1.TP5_Colas
                 {
                     //proximo evento                    
                     menorTiempo = cola.determinarMenor(proxLlegada, fin_estacionamiento1, fin_estacionamiento2,
-                        fin_estacionamiento3, fin_estacionamiento4, fin_estacionamiento5, proxInspeccion, fin_inspeccion);
+                        fin_estacionamiento3, fin_estacionamiento4, fin_estacionamiento5, proxInspeccion, 
+                        fin_inspeccion, prox_interrupcion);
 
                     //llegada
                     if (menorTiempo == proxLlegada)
@@ -545,8 +557,9 @@ namespace WindowsFormsApplication1.TP5_Colas
                                     }
                                 }
                                 break;
-                        }//fin switch
-
+                        //fin switch
+                        } 
+                        
                         if (j <= cantLugarEstacionamiento)
                         {
                             j++;
@@ -559,15 +572,20 @@ namespace WindowsFormsApplication1.TP5_Colas
                         }
 
                     }
+                    else if(menorTiempo == prox_interrupcion)
+                    {
+                        //Continuara
+
+                    }
 
                 }
 
                 if (i >= (desde - 1) && i <= (hasta - 1)) // iteraciones a mostrar en grilla desde la 1 a 22
                 {
-                    dgv_sim.Rows.Add((i + 1), reloj, tpoSigLlegada, proxLlegada, rnd_Demora, demora,
-                        fin_estacionamiento1, fin_estacionamiento2, fin_estacionamiento3, fin_estacionamiento4, fin_estacionamiento5,
-                        estadoInspector, proxInspeccion, fin_inspeccion, estado_est1, estado_est2, estado_est3, estado_est4, estado_est5,
-                        acMultas, acAutosSinPoderEstacionar);
+                    dgv_sim.Rows.Add((i + 1), reloj, tpoSigLlegada, proxLlegada, rnd_Demora, demora, fin_estacionamiento1, 
+                        fin_estacionamiento2, fin_estacionamiento3, fin_estacionamiento4, fin_estacionamiento5, estadoInspector, 
+                        proxInspeccion, fin_inspeccion, rnd_Interrupcion, tamano_interrupcion, tpo_interrupcion, 
+                        prox_interrupcion, estado_est1, estado_est2, estado_est3, estado_est4, estado_est5, acMultas, acAutosSinPoderEstacionar);
                 }
 
 
@@ -669,6 +687,7 @@ namespace WindowsFormsApplication1.TP5_Colas
             }
 
             dgv_sim.Rows.Clear();
+            autoNro = 1;
 
             txt_iteracionDesde.Enabled = true;
             txt_iteracionHasta.Enabled = true;
