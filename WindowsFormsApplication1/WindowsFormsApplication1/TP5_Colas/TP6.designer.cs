@@ -28,22 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_euler = new System.Windows.Forms.DataGridView();
+            this._t_tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._T_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._tmas1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Salir = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_euler)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgv_euler
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(326, 422);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_euler.AllowUserToAddRows = false;
+            this.dgv_euler.AllowUserToDeleteRows = false;
+            this.dgv_euler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_euler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._t_tiempo,
+            this._T_,
+            this._tmas1});
+            this.dgv_euler.Location = new System.Drawing.Point(12, 12);
+            this.dgv_euler.Name = "dgv_euler";
+            this.dgv_euler.Size = new System.Drawing.Size(316, 422);
+            this.dgv_euler.TabIndex = 0;
+            // 
+            // _t_tiempo
+            // 
+            this._t_tiempo.HeaderText = "t";
+            this._t_tiempo.Name = "_t_tiempo";
+            this._t_tiempo.Width = 70;
+            // 
+            // _T_
+            // 
+            this._T_.HeaderText = "T";
+            this._T_.Name = "_T_";
+            // 
+            // _tmas1
+            // 
+            this._tmas1.HeaderText = "dT/dt";
+            this._tmas1.Name = "_tmas1";
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(263, 440);
+            this.btn_Salir.Location = new System.Drawing.Point(253, 440);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 23);
             this.btn_Salir.TabIndex = 1;
@@ -55,19 +80,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 475);
+            this.ClientSize = new System.Drawing.Size(344, 475);
             this.Controls.Add(this.btn_Salir);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_euler);
             this.Name = "TP6";
-            this.Text = "Unidad de Almacenamiento";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Tabla de Euler";
+            this.Load += new System.EventHandler(this.TP6_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_euler)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_euler;
         private System.Windows.Forms.Button btn_Salir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _t_tiempo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _T_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _tmas1;
     }
 }

@@ -223,6 +223,9 @@ namespace WindowsFormsApplication1.TP5_Colas
                         fin_estacionamiento3, fin_estacionamiento4, fin_estacionamiento5, proxInspeccion, 
                         fin_inspeccion, prox_interrupcion);
 
+                    rnd_Interrupcion = 0;
+                    tpo_interrupcion = 0;
+
                     //llegada
                     if (menorTiempo == proxLlegada)
                     {
@@ -575,7 +578,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                     else if(menorTiempo == prox_interrupcion)
                     {
                         //Continuara
-
+                        
                     }
 
                 }
@@ -587,8 +590,7 @@ namespace WindowsFormsApplication1.TP5_Colas
                         proxInspeccion, fin_inspeccion, rnd_Interrupcion, tamano_interrupcion, tpo_interrupcion, 
                         prox_interrupcion, estado_est1, estado_est2, estado_est3, estado_est4, estado_est5, acMultas, acAutosSinPoderEstacionar);
                 }
-
-
+                
                 if (auto1.Fin_estacionamiento != 0)
                 {                    
                     dgv_sim.Rows[i].Cells[auto1.Nombre].Value = auto1.Estado.ToString();
@@ -714,6 +716,11 @@ namespace WindowsFormsApplication1.TP5_Colas
                 + "\nEl inspector levantó " + acMultas + " infracciones.";
 
             MessageBox.Show(str, "Resultados de la Simulacion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+        private void btn_euler_Click(object sender, EventArgs e)
+        {
+            TP6 euler = new TP6();
+            euler.Show();
         }
     }
 }
