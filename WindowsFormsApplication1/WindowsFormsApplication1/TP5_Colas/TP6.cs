@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1.TP5_Colas
             InitializeComponent();
         }
         private void TP6_Load(object sender, EventArgs e)
-        {
+        {            
             Euler();
         }
 

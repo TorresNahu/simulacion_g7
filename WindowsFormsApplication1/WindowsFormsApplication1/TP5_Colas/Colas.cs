@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1.TP5_Colas
     {
         string demora;        
         double min;
-        double rnd = 0;
+        //double rnd = 0;
 
         //TP6
         int tam_Inestabilidad;
@@ -33,9 +33,9 @@ namespace WindowsFormsApplication1.TP5_Colas
             return demora;
         }
 
-        public double determinarMenor(double proxLlegada, double fin_est1, double fin_est2, double fin_est3, double fin_est4, double fin_est5, double proxInspeccion, double fin_inspeccion, double proxInterrup)
+        public double determinarMenor(double proxLlegada, double fin_est1, double fin_est2, double fin_est3, double fin_est4, double fin_est5, double proxInspeccion, double fin_inspeccion, double proxInterrup, double fin_interrupcion)
         {
-            double[] lis = new double[] { proxLlegada, fin_est1, fin_est2, fin_est3, fin_est4, fin_est5, proxInspeccion, fin_inspeccion, proxInterrup };
+            double[] lis = new double[] { proxLlegada, fin_est1, fin_est2, fin_est3, fin_est4, fin_est5, proxInspeccion, fin_inspeccion, proxInterrup, fin_interrupcion };
             for (int i = 0; i < lis.Length; i++)
             {
                 if (i == 0)

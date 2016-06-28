@@ -47,7 +47,7 @@
             this._tmas1});
             this.dgv_euler.Location = new System.Drawing.Point(12, 12);
             this.dgv_euler.Name = "dgv_euler";
-            this.dgv_euler.Size = new System.Drawing.Size(316, 422);
+            this.dgv_euler.Size = new System.Drawing.Size(316, 709);
             this.dgv_euler.TabIndex = 0;
             // 
             // _t_tiempo
@@ -68,7 +68,7 @@
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(253, 440);
+            this.btn_Salir.Location = new System.Drawing.Point(257, 727);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 23);
             this.btn_Salir.TabIndex = 1;
@@ -80,9 +80,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 475);
+            this.ClientSize = new System.Drawing.Size(344, 792);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.dgv_euler);
+            this.MaximumSize = new System.Drawing.Size(360, 830);
+            this.MinimumSize = new System.Drawing.Size(360, 830);
             this.Name = "TP6";
             this.Text = "Tabla de Euler";
             this.Load += new System.EventHandler(this.TP6_Load);
